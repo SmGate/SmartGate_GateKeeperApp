@@ -621,7 +621,7 @@
     },
     {
       "name": "url_launcher_android",
-      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher_android-6.2.2",
+      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher_android-6.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -704,7 +704,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2024-02-13T07:46:32.151138Z",
+  "generated": "2024-02-15T10:44:55.977413Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }

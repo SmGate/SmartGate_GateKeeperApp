@@ -372,7 +372,7 @@ class EventCard extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.fromLTRB(14.w, 13.h, 18.w, 0),
         child: SizedBox(
-            height: 96.w,
+          //  height: 96.w,
             width: 343.w,
             child: Card(
                 elevation: 1,

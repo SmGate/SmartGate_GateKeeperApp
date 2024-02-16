@@ -1,0 +1,11 @@
+framework module flutter_notification_channel {
+  umbrella header "flutter_notification_channel-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module flutter_notification_channel.Swift {
+  header "flutter_notification_channel-Swift.h"
+  requires objc
+}

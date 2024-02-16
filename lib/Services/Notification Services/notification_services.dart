@@ -16,8 +16,14 @@ class NotificationServices {
   initFlutterNotificationPlugin(RemoteMessage message) async {
     var androidInitialization =
         AndroidInitializationSettings("@mipmap/ic_launcher");
+
+        var iosInitialization = DarwinInitializationSettings(
+        requestAlertPermission: true,
+        requestBadgePermission: true,
+        requestCriticalPermission: true,
+        requestSoundPermission: true);
     var initializeSetting =
-        InitializationSettings(android: androidInitialization);
+        InitializationSettings(android: androidInitialization,iOS: iosInitialization);
 
     await flutterLocalNotificationsPlugin.initialize(initializeSetting,
         onDidReceiveNotificationResponse: (payload) async {
@@ -108,6 +114,7 @@ class NotificationServices {
   }
 
   handleMessages(RemoteMessage message) async {
+    
     User user = await MySharedPreferences.getUserData();
 
     print(message.data['type']);
