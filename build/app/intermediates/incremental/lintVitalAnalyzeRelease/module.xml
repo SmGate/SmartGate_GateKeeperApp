@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    gradle="7.1.2"
+    buildFolder="/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/app"
+    bootClassPath="/Users/tms/Library/Android/sdk/platforms/android-33/android.jar:/Users/tms/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-33">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

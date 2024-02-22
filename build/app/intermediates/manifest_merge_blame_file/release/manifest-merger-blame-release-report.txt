@@ -1,0 +1,518 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mia.gatekeeper"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+11-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:3:5-76
+11-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:3:22-73
+12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+12-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:4:1-67
+12-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:4:18-64
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:5:1-63
+13-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:5:18-60
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:6:1-75
+14-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:6:18-72
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:7:1-61
+15-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:7:18-58
+16    <uses-permission android:name="android.permission.BLUETOOTH" />
+16-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:8:1-64
+16-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:8:18-61
+17    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+17-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:9:1-76
+17-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:9:18-73
+18    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+18-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:10:1-77
+18-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:10:18-74
+19    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+19-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:11:1-71
+19-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:11:18-68
+20    <uses-permission android:name="android.permission.WAKE_LOCK" />
+20-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:12:1-64
+20-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:12:18-61
+21    <uses-permission android:name="android.permission.VIBRATE" />
+21-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:13:1-61
+21-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:13:18-59
+22    <!-- Permissions options for the `notification` group -->
+23    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+23-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:13:5-77
+23-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:13:22-74
+24    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+24-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-81
+24-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-78
+25    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+25-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-81
+25-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:11:22-78
+26    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+26-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:12:5-79
+26-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:12:22-76
+27    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+27-->[com.google.firebase:firebase-iid:21.1.0] /Users/tms/.gradle/caches/transforms-3/b6c0ac056fd8d1f2e2fca93720e2fbfd/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:5-82
+27-->[com.google.firebase:firebase-iid:21.1.0] /Users/tms/.gradle/caches/transforms-3/b6c0ac056fd8d1f2e2fca93720e2fbfd/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:22-79
+28    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+28-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/tms/.gradle/caches/transforms-3/b9f53db8539032e15babe21ceaf2f145/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:25:5-79
+28-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/tms/.gradle/caches/transforms-3/b9f53db8539032e15babe21ceaf2f145/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:25:22-76
+29    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+29-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:5-110
+29-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:22-107
+30
+31    <permission
+31-->[androidx.core:core:1.10.1] /Users/tms/.gradle/caches/transforms-3/7c6f343a4b4718b451061c5137477666/transformed/core-1.10.1/AndroidManifest.xml:22:5-24:47
+32        android:name="com.mia.gatekeeper.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+32-->[androidx.core:core:1.10.1] /Users/tms/.gradle/caches/transforms-3/7c6f343a4b4718b451061c5137477666/transformed/core-1.10.1/AndroidManifest.xml:23:9-81
+33        android:protectionLevel="signature" />
+33-->[androidx.core:core:1.10.1] /Users/tms/.gradle/caches/transforms-3/7c6f343a4b4718b451061c5137477666/transformed/core-1.10.1/AndroidManifest.xml:24:9-44
+34
+35    <uses-permission android:name="com.mia.gatekeeper.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+35-->[androidx.core:core:1.10.1] /Users/tms/.gradle/caches/transforms-3/7c6f343a4b4718b451061c5137477666/transformed/core-1.10.1/AndroidManifest.xml:26:5-97
+35-->[androidx.core:core:1.10.1] /Users/tms/.gradle/caches/transforms-3/7c6f343a4b4718b451061c5137477666/transformed/core-1.10.1/AndroidManifest.xml:26:22-94
+36
+37    <application
+38        android:name="android.app.Application"
+38-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:16:9-42
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.10.1] /Users/tms/.gradle/caches/transforms-3/7c6f343a4b4718b451061c5137477666/transformed/core-1.10.1/AndroidManifest.xml:28:18-86
+40        android:icon="@mipmap/ic_launcher"
+40-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:17:9-43
+41        android:label="Smartgate Gatekeeper" >
+41-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:15:9-45
+42        <activity
+42-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:18:9-38:20
+43            android:name="com.malikwaqas.smartgategatekeeper.MainActivity"
+43-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:19:13-41
+44            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+44-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:23:13-163
+45            android:exported="true"
+45-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:20:13-36
+46            android:hardwareAccelerated="true"
+46-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:24:13-47
+47            android:launchMode="singleTop"
+47-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:21:13-43
+48            android:theme="@style/LaunchTheme"
+48-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:22:13-47
+49            android:windowSoftInputMode="adjustResize" >
+49-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:25:13-55
+50
+51            <!--
+52                 Specifies an Android theme to apply to this Activity as soon as
+53                 the Android process has started. This theme is visible to the user
+54                 while the Flutter UI initializes. After that, this theme continues
+55                 to determine the Window background behind the Flutter UI.
+56            -->
+57            <meta-data
+57-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:30:13-33:17
+58                android:name="io.flutter.embedding.android.NormalTheme"
+58-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:31:15-70
+59                android:resource="@style/NormalTheme" />
+59-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:32:15-52
+60
+61            <intent-filter>
+61-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:34:13-37:29
+62                <action android:name="android.intent.action.MAIN" />
+62-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:35:17-68
+62-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:35:25-66
+63
+64                <category android:name="android.intent.category.LAUNCHER" />
+64-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:36:17-76
+64-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:36:27-74
+65            </intent-filter>
+66        </activity>
+67        <!--
+68             Don't delete the meta-data below.
+69             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+70        -->
+71
+72        <meta-data
+72-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:42:9-44:33
+73            android:name="flutterEmbedding"
+73-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:43:13-44
+74            android:value="2" />
+74-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:44:13-30
+75        <meta-data
+75-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:46:8-48:54
+76            android:name="com.google.firebase.messaging.default_notification_channel_id"
+76-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:47:12-88
+77            android:value="high_importance_channel" />
+77-->/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/android/app/src/main/AndroidManifest.xml:48:12-51
+78
+79        <service
+79-->[:cloud_firestore] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-14:19
+80            android:name="com.google.firebase.components.ComponentDiscoveryService"
+80-->[:cloud_firestore] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:10:18-89
+81            android:directBootAware="true"
+81-->[com.google.firebase:firebase-common:20.3.3] /Users/tms/.gradle/caches/transforms-3/4ae3902be33ff0ac960f7263d4bae22e/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:34:13-43
+82            android:exported="false" >
+82-->[com.google.firebase:firebase-firestore:24.8.1] /Users/tms/.gradle/caches/transforms-3/24a8b2021c0a02e77bdd0083753002f2/transformed/jetified-firebase-firestore-24.8.1/AndroidManifest.xml:16:13-37
+83            <meta-data
+83-->[:cloud_firestore] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+84                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+84-->[:cloud_firestore] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-134
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[:cloud_firestore] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+86            <meta-data
+86-->[:firebase_analytics] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_analytics/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:85
+87                android:name="com.google.firebase.components:io.flutter.plugins.firebase.analytics.FlutterFirebaseAppRegistrar"
+87-->[:firebase_analytics] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_analytics/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-128
+88                android:value="com.google.firebase.components.ComponentRegistrar" />
+88-->[:firebase_analytics] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_analytics/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-82
+89            <meta-data
+89-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:38:13-40:85
+90                android:name="com.google.firebase.components:io.flutter.plugins.firebase.messaging.FlutterFirebaseAppRegistrar"
+90-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:39:17-128
+91                android:value="com.google.firebase.components.ComponentRegistrar" />
+91-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:40:17-82
+92            <meta-data
+92-->[:firebase_core] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-13:85
+93                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+93-->[:firebase_core] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:12:17-124
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[:firebase_core] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_core/intermediates/merged_manifest/release/AndroidManifest.xml:13:17-82
+95            <meta-data
+95-->[com.google.firebase:firebase-firestore:24.8.1] /Users/tms/.gradle/caches/transforms-3/24a8b2021c0a02e77bdd0083753002f2/transformed/jetified-firebase-firestore-24.8.1/AndroidManifest.xml:17:13-19:85
+96                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+96-->[com.google.firebase:firebase-firestore:24.8.1] /Users/tms/.gradle/caches/transforms-3/24a8b2021c0a02e77bdd0083753002f2/transformed/jetified-firebase-firestore-24.8.1/AndroidManifest.xml:18:17-111
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.firebase:firebase-firestore:24.8.1] /Users/tms/.gradle/caches/transforms-3/24a8b2021c0a02e77bdd0083753002f2/transformed/jetified-firebase-firestore-24.8.1/AndroidManifest.xml:19:17-82
+98            <meta-data
+98-->[com.google.firebase:firebase-iid:21.1.0] /Users/tms/.gradle/caches/transforms-3/b6c0ac056fd8d1f2e2fca93720e2fbfd/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:32:13-34:85
+99                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+99-->[com.google.firebase:firebase-iid:21.1.0] /Users/tms/.gradle/caches/transforms-3/b6c0ac056fd8d1f2e2fca93720e2fbfd/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:33:17-96
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-iid:21.1.0] /Users/tms/.gradle/caches/transforms-3/b6c0ac056fd8d1f2e2fca93720e2fbfd/transformed/jetified-firebase-iid-21.1.0/AndroidManifest.xml:34:17-82
+101            <meta-data
+101-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/tms/.gradle/caches/transforms-3/b9f53db8539032e15babe21ceaf2f145/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:31:13-33:85
+102                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+102-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/tms/.gradle/caches/transforms-3/b9f53db8539032e15babe21ceaf2f145/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:32:17-139
+103                android:value="com.google.firebase.components.ComponentRegistrar" />
+103-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/tms/.gradle/caches/transforms-3/b9f53db8539032e15babe21ceaf2f145/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:33:17-82
+104            <meta-data
+104-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:53:13-55:85
+105                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+105-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:54:17-119
+106                android:value="com.google.firebase.components.ComponentRegistrar" />
+106-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:55:17-82
+107            <meta-data
+107-->[com.google.firebase:firebase-installations:17.1.4] /Users/tms/.gradle/caches/transforms-3/0321b8aa0eda2fdb1e2616eb45b48133/transformed/jetified-firebase-installations-17.1.4/AndroidManifest.xml:15:13-17:85
+108                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+108-->[com.google.firebase:firebase-installations:17.1.4] /Users/tms/.gradle/caches/transforms-3/0321b8aa0eda2fdb1e2616eb45b48133/transformed/jetified-firebase-installations-17.1.4/AndroidManifest.xml:16:17-127
+109                android:value="com.google.firebase.components.ComponentRegistrar" />
+109-->[com.google.firebase:firebase-installations:17.1.4] /Users/tms/.gradle/caches/transforms-3/0321b8aa0eda2fdb1e2616eb45b48133/transformed/jetified-firebase-installations-17.1.4/AndroidManifest.xml:17:17-82
+110            <meta-data
+110-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/tms/.gradle/caches/transforms-3/ba637f3314ae670b842d456f1d33c234/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+111                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+111-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/tms/.gradle/caches/transforms-3/ba637f3314ae670b842d456f1d33c234/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+112                android:value="com.google.firebase.components.ComponentRegistrar" />
+112-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/tms/.gradle/caches/transforms-3/ba637f3314ae670b842d456f1d33c234/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+113        </service>
+114        <service
+114-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-19:72
+115            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingBackgroundService"
+115-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-107
+116            android:exported="false"
+116-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-37
+117            android:permission="android.permission.BIND_JOB_SERVICE" />
+117-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:19:13-69
+118        <service
+118-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:20:9-26:19
+119            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingService"
+119-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-97
+120            android:exported="false" >
+120-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:22:13-37
+121            <intent-filter>
+121-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:29
+122                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+122-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-78
+122-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:25-75
+123            </intent-filter>
+124        </service>
+125
+126        <receiver
+126-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:28:9-35:20
+127            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingReceiver"
+127-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:29:13-98
+128            android:exported="true"
+128-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:30:13-36
+129            android:permission="com.google.android.c2dm.permission.SEND" >
+129-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:31:13-73
+130            <intent-filter>
+130-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:32:13-34:29
+131                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+131-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:17-81
+131-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:25-78
+132            </intent-filter>
+133        </receiver>
+134
+135        <provider
+135-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:43:9-47:38
+136            android:name="io.flutter.plugins.firebase.messaging.FlutterFirebaseMessagingInitProvider"
+136-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:44:13-102
+137            android:authorities="com.mia.gatekeeper.flutterfirebasemessaginginitprovider"
+137-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:45:13-88
+138            android:exported="false"
+138-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:46:13-37
+139            android:initOrder="99" />
+139-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:47:13-35
+140        <provider
+140-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+141            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+141-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-82
+142            android:authorities="com.mia.gatekeeper.flutter.image_provider"
+142-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-74
+143            android:exported="false"
+143-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+144            android:grantUriPermissions="true" >
+144-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+145            <meta-data
+145-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:75
+146                android:name="android.support.FILE_PROVIDER_PATHS"
+146-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-67
+147                android:resource="@xml/flutter_image_picker_file_paths" />
+147-->[:image_picker_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-72
+148        </provider>
+149
+150        <receiver
+150-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:16:9-18:40
+151            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
+151-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-91
+152            android:exported="false" />
+152-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:18:13-37
+153        <receiver
+153-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:19:9-21:40
+154            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+154-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:20:13-97
+155            android:exported="false" />
+155-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:21:13-37
+156        <receiver
+156-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:22:9-31:20
+157            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+157-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-101
+158            android:exported="false" >
+158-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:24:13-37
+159            <intent-filter>
+159-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:25:13-30:29
+160                <action android:name="android.intent.action.BOOT_COMPLETED" />
+160-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:17-79
+160-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:26:25-76
+161                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+161-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:27:17-84
+161-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:27:25-81
+162                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+162-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:28:17-82
+162-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:28:25-79
+163                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+163-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:29:17-82
+163-->[:flutter_local_notifications] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/flutter_local_notifications/intermediates/merged_manifest/release/AndroidManifest.xml:29:25-79
+164            </intent-filter>
+165        </receiver>
+166
+167        <activity
+167-->[:url_launcher_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+168            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+168-->[:url_launcher_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+169            android:exported="false"
+169-->[:url_launcher_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+170            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+170-->[:url_launcher_android] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+171
+172        <receiver
+172-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:29:9-36:20
+173            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+173-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:30:13-78
+174            android:exported="true"
+174-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:31:13-36
+175            android:permission="com.google.android.c2dm.permission.SEND" >
+175-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:32:13-73
+176            <intent-filter>
+176-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:32:13-34:29
+177                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+177-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:17-81
+177-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:33:25-78
+178            </intent-filter>
+179        </receiver>
+180        <!--
+181             FirebaseMessagingService performs security checks at runtime,
+182             but set to not exported to explicitly avoid allowing another app to call it.
+183        -->
+184        <service
+184-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:42:9-49:19
+185            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+185-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:43:13-82
+186            android:directBootAware="true"
+186-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:44:13-43
+187            android:exported="false" >
+187-->[com.google.firebase:firebase-messaging:23.2.1] /Users/tms/.gradle/caches/transforms-3/41cb90cb55af56db26a3b07cf07f94c0/transformed/jetified-firebase-messaging-23.2.1/AndroidManifest.xml:45:13-37
+188            <intent-filter android:priority="-500" >
+188-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:23:13-25:29
+189                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+189-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:17-78
+189-->[:firebase_messaging] /Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/firebase_messaging/intermediates/merged_manifest/release/AndroidManifest.xml:24:25-75
+190            </intent-filter>
+191        </service>
+192
+193        <provider
+193-->[com.google.firebase:firebase-common:20.3.3] /Users/tms/.gradle/caches/transforms-3/4ae3902be33ff0ac960f7263d4bae22e/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:25:9-30:39
+194            android:name="com.google.firebase.provider.FirebaseInitProvider"
+194-->[com.google.firebase:firebase-common:20.3.3] /Users/tms/.gradle/caches/transforms-3/4ae3902be33ff0ac960f7263d4bae22e/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:26:13-77
+195            android:authorities="com.mia.gatekeeper.firebaseinitprovider"
+195-->[com.google.firebase:firebase-common:20.3.3] /Users/tms/.gradle/caches/transforms-3/4ae3902be33ff0ac960f7263d4bae22e/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:27:13-72
+196            android:directBootAware="true"
+196-->[com.google.firebase:firebase-common:20.3.3] /Users/tms/.gradle/caches/transforms-3/4ae3902be33ff0ac960f7263d4bae22e/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:28:13-43
+197            android:exported="false"
+197-->[com.google.firebase:firebase-common:20.3.3] /Users/tms/.gradle/caches/transforms-3/4ae3902be33ff0ac960f7263d4bae22e/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:29:13-37
+198            android:initOrder="100" />
+198-->[com.google.firebase:firebase-common:20.3.3] /Users/tms/.gradle/caches/transforms-3/4ae3902be33ff0ac960f7263d4bae22e/transformed/jetified-firebase-common-20.3.3/AndroidManifest.xml:30:13-36
+199
+200        <receiver
+200-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:29:9-33:20
+201            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+201-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:30:13-85
+202            android:enabled="true"
+202-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:31:13-35
+203            android:exported="false" >
+203-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:32:13-37
+204        </receiver>
+205
+206        <service
+206-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:35:9-38:40
+207            android:name="com.google.android.gms.measurement.AppMeasurementService"
+207-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:36:13-84
+208            android:enabled="true"
+208-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:37:13-35
+209            android:exported="false" />
+209-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:38:13-37
+210        <service
+210-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:39:9-43:72
+211            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+211-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:40:13-87
+212            android:enabled="true"
+212-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:41:13-35
+213            android:exported="false"
+213-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:42:13-37
+214            android:permission="android.permission.BIND_JOB_SERVICE" />
+214-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/tms/.gradle/caches/transforms-3/cbd289ce3a2d34178e750c9eb287fb4b/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:43:13-69
+215
+216        <activity
+216-->[com.google.android.gms:play-services-base:18.0.1] /Users/tms/.gradle/caches/transforms-3/57979c84e0c01a1adaddca83ebee2eca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+217            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+217-->[com.google.android.gms:play-services-base:18.0.1] /Users/tms/.gradle/caches/transforms-3/57979c84e0c01a1adaddca83ebee2eca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+218            android:exported="false"
+218-->[com.google.android.gms:play-services-base:18.0.1] /Users/tms/.gradle/caches/transforms-3/57979c84e0c01a1adaddca83ebee2eca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+219            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+219-->[com.google.android.gms:play-services-base:18.0.1] /Users/tms/.gradle/caches/transforms-3/57979c84e0c01a1adaddca83ebee2eca/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+220
+221        <meta-data
+221-->[com.google.android.gms:play-services-basement:18.1.0] /Users/tms/.gradle/caches/transforms-3/93a6b4a30ce6ba6dcfcdcc226253ab8f/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+222            android:name="com.google.android.gms.version"
+222-->[com.google.android.gms:play-services-basement:18.1.0] /Users/tms/.gradle/caches/transforms-3/93a6b4a30ce6ba6dcfcdcc226253ab8f/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+223            android:value="@integer/google_play_services_version" />
+223-->[com.google.android.gms:play-services-basement:18.1.0] /Users/tms/.gradle/caches/transforms-3/93a6b4a30ce6ba6dcfcdcc226253ab8f/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+224
+225        <uses-library
+225-->[androidx.window:window:1.0.0-beta04] /Users/tms/.gradle/caches/transforms-3/bef90d9beaa600527b44f66b20c50a8d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+226            android:name="androidx.window.extensions"
+226-->[androidx.window:window:1.0.0-beta04] /Users/tms/.gradle/caches/transforms-3/bef90d9beaa600527b44f66b20c50a8d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+227            android:required="false" />
+227-->[androidx.window:window:1.0.0-beta04] /Users/tms/.gradle/caches/transforms-3/bef90d9beaa600527b44f66b20c50a8d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+228        <uses-library
+228-->[androidx.window:window:1.0.0-beta04] /Users/tms/.gradle/caches/transforms-3/bef90d9beaa600527b44f66b20c50a8d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+229            android:name="androidx.window.sidecar"
+229-->[androidx.window:window:1.0.0-beta04] /Users/tms/.gradle/caches/transforms-3/bef90d9beaa600527b44f66b20c50a8d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+230            android:required="false" />
+230-->[androidx.window:window:1.0.0-beta04] /Users/tms/.gradle/caches/transforms-3/bef90d9beaa600527b44f66b20c50a8d/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+231
+232        <provider
+232-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:24:9-32:20
+233            android:name="androidx.startup.InitializationProvider"
+233-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:25:13-67
+234            android:authorities="com.mia.gatekeeper.androidx-startup"
+234-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:26:13-68
+235            android:exported="false" >
+235-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:27:13-37
+236            <meta-data
+236-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+237                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+237-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+238                android:value="androidx.startup" />
+238-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+239        </provider>
+240
+241        <receiver
+241-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+242            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+242-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+243            android:directBootAware="false"
+243-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+244            android:enabled="true"
+244-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+245            android:exported="true"
+245-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+246            android:permission="android.permission.DUMP" >
+246-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+247            <intent-filter>
+247-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+248                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+248-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+248-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+249            </intent-filter>
+250            <intent-filter>
+250-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+251                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+251-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+251-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+252            </intent-filter>
+253            <intent-filter>
+253-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+254                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+254-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+254-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+255            </intent-filter>
+256            <intent-filter>
+256-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+257                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+257-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+257-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/tms/.gradle/caches/transforms-3/7b587707211107b9f9d769135f241c93/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+258            </intent-filter>
+259        </receiver>
+260
+261        <service
+261-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/tms/.gradle/caches/transforms-3/ad11990a7c82ed32740f23b465ccab26/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
+262            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+262-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/tms/.gradle/caches/transforms-3/ad11990a7c82ed32740f23b465ccab26/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
+263            android:exported="false" >
+263-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/tms/.gradle/caches/transforms-3/ad11990a7c82ed32740f23b465ccab26/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
+264            <meta-data
+264-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/tms/.gradle/caches/transforms-3/ad11990a7c82ed32740f23b465ccab26/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
+265                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+265-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/tms/.gradle/caches/transforms-3/ad11990a7c82ed32740f23b465ccab26/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
+266                android:value="cct" />
+266-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/tms/.gradle/caches/transforms-3/ad11990a7c82ed32740f23b465ccab26/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
+267        </service>
+268        <service
+268-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/tms/.gradle/caches/transforms-3/097bf9560feb18bd72f504718a870cba/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
+269            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+269-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/tms/.gradle/caches/transforms-3/097bf9560feb18bd72f504718a870cba/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
+270            android:exported="false"
+270-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/tms/.gradle/caches/transforms-3/097bf9560feb18bd72f504718a870cba/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
+271            android:permission="android.permission.BIND_JOB_SERVICE" >
+271-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/tms/.gradle/caches/transforms-3/097bf9560feb18bd72f504718a870cba/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
+272        </service>
+273
+274        <receiver
+274-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/tms/.gradle/caches/transforms-3/097bf9560feb18bd72f504718a870cba/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
+275            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+275-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/tms/.gradle/caches/transforms-3/097bf9560feb18bd72f504718a870cba/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
+276            android:exported="false" />
+276-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/tms/.gradle/caches/transforms-3/097bf9560feb18bd72f504718a870cba/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
+277    </application>
+278
+279</manifest>

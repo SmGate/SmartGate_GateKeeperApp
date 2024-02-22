@@ -278,6 +278,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "flutter_tts",
+      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/flutter_tts-4.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "flutter_web_plugins",
       "rootUri": "file:///Users/tms/Developer/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
@@ -339,9 +345,9 @@
     },
     {
       "name": "image_picker_ios",
-      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.9+1",
+      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/image_picker_ios-0.8.9+2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "image_picker_linux",
@@ -615,9 +621,9 @@
     },
     {
       "name": "url_launcher",
-      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher-6.2.4",
+      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher-6.2.5",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.2"
     },
     {
       "name": "url_launcher_android",
@@ -627,9 +633,9 @@
     },
     {
       "name": "url_launcher_ios",
-      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher_ios-6.2.4",
+      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher_ios-6.2.5",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.2"
     },
     {
       "name": "url_launcher_linux",
@@ -645,9 +651,9 @@
     },
     {
       "name": "url_launcher_platform_interface",
-      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher_platform_interface-2.3.1",
+      "rootUri": "file:///Users/tms/.pub-cache/hosted/pub.dev/url_launcher_platform_interface-2.3.2",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.1"
     },
     {
       "name": "url_launcher_web",
@@ -704,7 +710,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2024-02-15T10:44:55.977413Z",
+  "generated": "2024-03-21T10:01:44.289170Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }

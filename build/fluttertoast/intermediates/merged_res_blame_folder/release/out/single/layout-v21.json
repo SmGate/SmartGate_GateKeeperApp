@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/layout-v21/notification_action.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/layout-v21/notification_template_custom_big.xml"
+    }
+]

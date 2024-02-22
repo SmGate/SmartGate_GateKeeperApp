@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -29,74 +31,82 @@ class NoticeBoardScreen extends GetView {
         child: SafeArea(
           child: Scaffold(
               backgroundColor: Colors.white,
-              body: Column(
-                children: [
-                  MyBackButton(
-                    text: 'NoticeBoard',
-                    onTap: () {
-                      Get.offNamed(homescreen, arguments: controller.userdata);
-                    },
-                  ),
-                  Expanded(
-                    child: FutureBuilder(
-                        future: controller.viewNoticeBoardApi(
-                            controller.userdata.subadminid!,
-                            controller.userdata.bearerToken!),
-                        builder: (context, AsyncSnapshot snapshot) {
-                          if (snapshot.hasData) {
-                            if (snapshot.data.data != null &&
-                                snapshot.data!.data.length != 0) {
-                              return ListView.builder(
-                                  itemBuilder: (context, index) {
-                                    controller.snapShot =
-                                        snapshot.data!.data[index];
-                                    return GestureDetector(
-                                      onTap: () {
-                                        showDialog(
-                                            context: context,
-                                            builder: (BuildContext context) =>
-                                                AlertDialog(
-                                                    content:
-                                                        NoticeBoardDialogCard(
-                                                  status: snapshot
-                                                      .data!.data[index].status,
-                                                  startDate: snapshot.data!
-                                                      .data[index].startdate,
-                                                  endDate: snapshot.data!
-                                                      .data[index].enddate,
-                                                  title: snapshot.data!
-                                                      .data[index].noticetitle,
-                                                  description: snapshot.data!
-                                                      .data[index].noticedetail,
-                                                  endTime: snapshot.data!
-                                                      .data[index].endtime,
-                                                  startTime: snapshot.data!
-                                                      .data[index].starttime,
-                                                )));
-                                      },
-                                      child: NoticeboardCard(
-                                          title:
-                                              controller.snapShot.noticetitle,
-                                          description:
-                                              controller.snapShot.noticedetail,
-                                          startDate:
-                                              controller.snapShot.startdate),
-                                    );
-                                  },
-                                  itemCount: snapshot.data!.data.length);
+              body: Directionality(
+                textDirection: TextDirection.ltr,
+                child: Column(
+                  children: [
+                    MyBackButton(
+                      text: 'notice_board'.tr,
+                      onTap: () {
+                        Get.offNamed(homescreen,
+                            arguments: controller.userdata);
+                      },
+                    ),
+                    Expanded(
+                      child: FutureBuilder(
+                          future: controller.viewNoticeBoardApi(
+                              controller.userdata.subadminid!,
+                              controller.userdata.bearerToken!),
+                          builder: (context, AsyncSnapshot snapshot) {
+                            if (snapshot.hasData) {
+                              if (snapshot.data.data != null &&
+                                  snapshot.data!.data.length != 0) {
+                                return ListView.builder(
+                                    itemBuilder: (context, index) {
+                                      controller.snapShot =
+                                          snapshot.data!.data[index];
+                                      return GestureDetector(
+                                        onTap: () {
+                                          showDialog(
+                                              context: context,
+                                              builder: (BuildContext context) =>
+                                                  AlertDialog(
+                                                      content:
+                                                          NoticeBoardDialogCard(
+                                                    status: snapshot.data!
+                                                        .data[index].status,
+                                                    startDate: snapshot.data!
+                                                        .data[index].startdate,
+                                                    endDate: snapshot.data!
+                                                        .data[index].enddate,
+                                                    title: snapshot
+                                                        .data!
+                                                        .data[index]
+                                                        .noticetitle,
+                                                    description: snapshot
+                                                        .data!
+                                                        .data[index]
+                                                        .noticedetail,
+                                                    endTime: snapshot.data!
+                                                        .data[index].endtime,
+                                                    startTime: snapshot.data!
+                                                        .data[index].starttime,
+                                                  )));
+                                        },
+                                        child: NoticeboardCard(
+                                            title:
+                                                controller.snapShot.noticetitle,
+                                            description: controller
+                                                .snapShot.noticedetail,
+                                            startDate:
+                                                controller.snapShot.startdate),
+                                      );
+                                    },
+                                    itemCount: snapshot.data!.data.length);
+                              } else {
+                                return EmptyList(
+                                  name: 'No Notices',
+                                );
+                              }
+                            } else if (snapshot.hasError) {
+                              return Icon(Icons.error_outline);
                             } else {
-                              return EmptyList(
-                                name: 'No Notices',
-                              );
+                              return Loader();
                             }
-                          } else if (snapshot.hasError) {
-                            return Icon(Icons.error_outline);
-                          } else {
-                            return Loader();
-                          }
-                        }),
-                  ),
-                ],
+                          }),
+                    ),
+                  ],
+                ),
               )),
         ),
       ),
@@ -414,8 +424,7 @@ class NoticeboardCard extends StatelessWidget {
                       8.w.pw,
                       Text(
                           DateHelper.convertDateFormatToDayMonthYearDateFormat(
-                                  startDate!) ??
-                              "",
+                              startDate!),
                           style: GoogleFonts.ubuntu(
                               fontWeight: FontWeight.w300,
                               fontSize: 10.sp,

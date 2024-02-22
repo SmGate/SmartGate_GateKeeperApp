@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatekeeper/Widgets/Empty%20List/empty_list.dart';
@@ -28,79 +30,83 @@ class ResidentialEmergencyScreen extends GetView {
             child: SafeArea(
               child: Scaffold(
                   backgroundColor: Colors.white,
-                  body: Column(
-                    children: [
-                      MyBackButton(
-                        text: 'Emergency',
-                        onTap: () {
-                          Get.offNamed(homescreen,
-                              arguments: controller.userdata);
-                        },
-                      ),
-                      22.h.ph,
-                      Expanded(
-                        child: FutureBuilder(
-                            future: controller.viewVistorsDetailApi(
-                                controller.userdata.subadminid!,
-                                controller.userdata.bearerToken!),
-                            builder:
-                                (BuildContext context, AsyncSnapshot snapshot) {
-                              if (snapshot.hasData) {
-                                if (snapshot.data.data != null &&
-                                    snapshot.data.data!.length != 0) {
-                                  return ListView.builder(
-                                      itemBuilder: (context, index) {
-                                        return GestureDetector(
-                                          onTap: () {
-                                            showDialog(
-                                                context: context,
-                                                builder:
-                                                    (BuildContext context) =>
-                                                        AlertDialog(
-                                                          content: EmergencyDialog(
-                                                              problem: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .problem,
-                                                              createdAt: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .createdAt,
-                                                              address: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .resident
-                                                                  .first
-                                                                  .address,
-                                                              mobileNo: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .resident
-                                                                  .first
-                                                                  .mobileno,
-                                                              description: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .description),
-                                                        ));
-                                          },
-                                          child: EmergencyCard(snapshot, index),
-                                        );
-                                      },
-                                      itemCount: snapshot.data.data.length);
+                  body: Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: Column(
+                      children: [
+                        MyBackButton(
+                          text: 'emergency'.tr,
+                          onTap: () {
+                            Get.offNamed(homescreen,
+                                arguments: controller.userdata);
+                          },
+                        ),
+                        22.h.ph,
+                        Expanded(
+                          child: FutureBuilder(
+                              future: controller.viewVistorsDetailApi(
+                                  controller.userdata.subadminid!,
+                                  controller.userdata.bearerToken!),
+                              builder: (BuildContext context,
+                                  AsyncSnapshot snapshot) {
+                                if (snapshot.hasData) {
+                                  if (snapshot.data.data != null &&
+                                      snapshot.data.data!.length != 0) {
+                                    return ListView.builder(
+                                        itemBuilder: (context, index) {
+                                          return GestureDetector(
+                                            onTap: () {
+                                              showDialog(
+                                                  context: context,
+                                                  builder: (BuildContext
+                                                          context) =>
+                                                      AlertDialog(
+                                                        content: EmergencyDialog(
+                                                            problem: snapshot
+                                                                .data!
+                                                                .data![index]
+                                                                .problem,
+                                                            createdAt: snapshot
+                                                                .data!
+                                                                .data![index]
+                                                                .createdAt,
+                                                            address: snapshot
+                                                                .data!
+                                                                .data![index]
+                                                                .resident
+                                                                .first
+                                                                .address,
+                                                            mobileNo: snapshot
+                                                                .data!
+                                                                .data![index]
+                                                                .resident
+                                                                .first
+                                                                .mobileno,
+                                                            description: snapshot
+                                                                .data!
+                                                                .data![index]
+                                                                .description),
+                                                      ));
+                                            },
+                                            child:
+                                                EmergencyCard(snapshot, index),
+                                          );
+                                        },
+                                        itemCount: snapshot.data.data.length);
+                                  } else {
+                                    return EmptyList(
+                                      name: "No Emergency Reported.",
+                                    );
+                                  }
+                                } else if (snapshot.hasError) {
+                                  return Loader();
                                 } else {
-                                  return EmptyList(
-                                    name: "No Emergency Reported.",
-                                  );
+                                  return Loader();
                                 }
-                              } else if (snapshot.hasError) {
-                                return Loader();
-                              } else {
-                                return Loader();
-                              }
-                            }),
-                      ),
-                    ],
+                              }),
+                        ),
+                      ],
+                    ),
                   )),
             ),
           );
@@ -217,8 +223,7 @@ class EmergencyDialog extends StatelessWidget {
           8.95.h.ph,
           Padding(
             padding: EdgeInsets.only(left: 26.w),
-            child: Text(
-                convertDateFormatToDayMonthYearDateFormat(createdAt!) ?? "",
+            child: Text(convertDateFormatToDayMonthYearDateFormat(createdAt!),
                 style: GoogleFonts.ubuntu(
                     fontWeight: FontWeight.w500,
                     fontSize: 14.sp,
@@ -289,7 +294,7 @@ class EmergencyDialog extends StatelessWidget {
           Center(
             child: MyButton(
               border: 4.r,
-              width: 67.w,
+              width: 70.w,
               height: 22.w,
               name: 'Ok',
               onPressed: () {

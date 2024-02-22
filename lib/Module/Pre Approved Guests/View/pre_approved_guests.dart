@@ -20,84 +20,90 @@ class PreApprovedGuests extends GetView {
             init: PreApproveEntries(),
             builder: (controller) {
               return Scaffold(
-                body: Column(
-                  children: [
-                    MyBackButton(
-                      text: 'Pre Approve Entry',
-                    ),
-                    if (controller.status == Status.completed) ...[
-                      Expanded(
-                        child: FutureBuilder(
-                            future: controller.preApproveEntriesApi(
-                                controller.data.userid, controller.token),
-                            builder:
-                                (BuildContext context, AsyncSnapshot snapshot) {
-                              if (snapshot.hasData) {
-                                if (snapshot.data.data != null &&
-                                    snapshot.data!.data.length != 0) {
-                                  return ListView.builder(
-                                    itemCount: snapshot.data.data.length,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return GestureDetector(
-                                        onTap: () {
-                                          showDialog(
-                                              context: context,
-                                              builder: (BuildContext context) =>
-                                                  AlertDialog(
-                                                      content:
-                                                          PreApproveEntryDialog(
-                                                    name: snapshot
-                                                        .data.data[index].name,
-                                                    description: snapshot
-                                                        .data
-                                                        .data[index]
-                                                        .description,
-                                                    arrivaldate: snapshot
-                                                        .data
-                                                        .data[index]
-                                                        .arrivaldate,
-                                                    arrivaltime: snapshot
-                                                        .data
-                                                        .data[index]
-                                                        .arrivaltime,
-                                                    cnic: snapshot
-                                                        .data.data[index].cnic,
-                                                    mobileno: snapshot.data
-                                                        .data[index].mobileno,
-                                                    vechileno: snapshot.data
-                                                        .data[index].vechileno,
-                                                    visitortype: snapshot
-                                                        .data
-                                                        .data[index]
-                                                        .visitortype,
-                                                  )));
-                                        },
-                                        child: PreApproveEntryCard(snapshot,
-                                            index, controller, context),
-                                      );
-                                    },
-                                  );
+                body: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Column(
+                    children: [
+                      MyBackButton(
+                        text: 'pre_approved_entriese'.tr,
+                      ),
+                      if (controller.status == Status.completed) ...[
+                        Expanded(
+                          child: FutureBuilder(
+                              future: controller.preApproveEntriesApi(
+                                  controller.data.userid, controller.token),
+                              builder: (BuildContext context,
+                                  AsyncSnapshot snapshot) {
+                                if (snapshot.hasData) {
+                                  if (snapshot.data.data != null &&
+                                      snapshot.data!.data.length != 0) {
+                                    return ListView.builder(
+                                      itemCount: snapshot.data.data.length,
+                                      itemBuilder:
+                                          (BuildContext context, int index) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            showDialog(
+                                                context: context,
+                                                builder: (BuildContext
+                                                        context) =>
+                                                    AlertDialog(
+                                                        content:
+                                                            PreApproveEntryDialog(
+                                                      name: snapshot.data
+                                                          .data[index].name,
+                                                      description: snapshot
+                                                          .data
+                                                          .data[index]
+                                                          .description,
+                                                      arrivaldate: snapshot
+                                                          .data
+                                                          .data[index]
+                                                          .arrivaldate,
+                                                      arrivaltime: snapshot
+                                                          .data
+                                                          .data[index]
+                                                          .arrivaltime,
+                                                      cnic: snapshot.data
+                                                          .data[index].cnic,
+                                                      mobileno: snapshot.data
+                                                          .data[index].mobileno,
+                                                      vechileno: snapshot
+                                                          .data
+                                                          .data[index]
+                                                          .vechileno,
+                                                      visitortype: snapshot
+                                                          .data
+                                                          .data[index]
+                                                          .visitortype,
+                                                    )));
+                                          },
+                                          child: PreApproveEntryCard(snapshot,
+                                              index, controller, context),
+                                        );
+                                      },
+                                    );
+                                  } else {
+                                    return EmptyList(
+                                      name: 'No Preapprove Entry',
+                                    );
+                                  }
+                                } else if (snapshot.hasError) {
+                                  return Loader();
                                 } else {
-                                  return EmptyList(
-                                    name: 'No Preapprove Entry',
-                                  );
+                                  return Loader();
                                 }
-                              } else if (snapshot.hasError) {
-                                return Loader();
-                              } else {
-                                return Loader();
-                              }
-                            }),
-                      )
-                    ] else if (controller.status == Status.loading) ...[
-                      Loader()
-                    ] else ...[
-                      EmptyList(
-                        name: 'Something Went Wrong',
-                      )
-                    ]
-                  ],
+                              }),
+                        )
+                      ] else if (controller.status == Status.loading) ...[
+                        Loader()
+                      ] else ...[
+                        EmptyList(
+                          name: 'Something Went Wrong',
+                        )
+                      ]
+                    ],
+                  ),
                 ),
               );
             }));
@@ -425,12 +431,12 @@ class PreApproveEntryDialog extends StatelessWidget {
           23.33.ph,
           DialogBoxElipseHeading(text: 'Mobile No'),
           DialogBoxText(
-            text: mobileno ?? "",
+            text: mobileno,
           ),
           23.33.ph,
           DialogBoxElipseHeading(text: 'Expected Arrival Time'),
           DialogBoxText(
-            text: Hour12formatTime(arrivaltime!) ?? "",
+            text: Hour12formatTime(arrivaltime!),
           ),
           23.33.ph,
           DialogBoxElipseHeading(text: 'CNIC'),

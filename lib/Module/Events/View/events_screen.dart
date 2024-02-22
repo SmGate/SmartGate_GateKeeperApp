@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -29,88 +31,95 @@ class EventsScreen extends GetView {
             child: SafeArea(
               child: Scaffold(
                 backgroundColor: HexColor('#FCFCFC'),
-                body: Column(
-                  children: [
-                    MyBackButton(
-                      text: 'Society Events',
-                      onTap: () {
-                        Get.offNamed(homescreen,
-                            arguments: controller.userdata);
-                      },
-                    ),
-                    Expanded(
-                      child: FutureBuilder<Event>(
-                          future: controller.viewEventsApi(
-                              userid: controller.userdata.subadminid!,
-                              token: controller.userdata.bearerToken!),
-                          builder: (context, snapshot) {
-                            if (snapshot.hasData) {
-                              if (snapshot.data != null &&
-                                  snapshot.data!.data!.length != 0) {
-                                return ListView.builder(
-                                    itemBuilder: (context, index) {
-                                      controller.snapShot =
-                                          snapshot.data!.data![index];
+                body: Directionality(
+                  textDirection: TextDirection.ltr,
+                  child: Column(
+                    children: [
+                      MyBackButton(
+                        text: 'society_events'.tr,
+                        onTap: () {
+                          Get.offNamed(homescreen,
+                              arguments: controller.userdata);
+                        },
+                      ),
+                      Expanded(
+                        child: FutureBuilder<Event>(
+                            future: controller.viewEventsApi(
+                                userid: controller.userdata.subadminid!,
+                                token: controller.userdata.bearerToken!),
+                            builder: (context, snapshot) {
+                              if (snapshot.hasData) {
+                                if (snapshot.data != null &&
+                                    snapshot.data!.data!.length != 0) {
+                                  return ListView.builder(
+                                      itemBuilder: (context, index) {
+                                        controller.snapShot =
+                                            snapshot.data!.data![index];
 
-                                      return GestureDetector(
-                                          onTap: () {
-                                            showDialog(
-                                                context: context,
-                                                builder: (BuildContext
-                                                        context) =>
-                                                    AlertDialog(
-                                                      content: EventDialog(
-                                                          startTime: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .starttime ??
-                                                              "",
-                                                          endTime: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .endtime ??
-                                                              "",
-                                                          title: snapshot
-                                                              .data!
-                                                              .data![index]
-                                                              .title,
-                                                          startDate: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .startdate ??
-                                                              "",
-                                                          endDate: snapshot
-                                                                  .data!
-                                                                  .data![index]
-                                                                  .enddate ??
-                                                              "",
-                                                          description: snapshot
-                                                              .data!
-                                                              .data![index]
-                                                              .description),
-                                                    ));
-                                          },
-                                          child: EventCard(
-                                            title: controller.snapShot.title,
-                                            description:
-                                                controller.snapShot.description,
-                                            startDate:
-                                                controller.snapShot.startdate,
-                                            index: index,
-                                          ));
-                                    },
-                                    itemCount: snapshot.data!.data!.length);
+                                        return GestureDetector(
+                                            onTap: () {
+                                              showDialog(
+                                                  context: context,
+                                                  builder: (BuildContext
+                                                          context) =>
+                                                      AlertDialog(
+                                                        content: EventDialog(
+                                                            startTime: snapshot
+                                                                    .data!
+                                                                    .data![
+                                                                        index]
+                                                                    .starttime ??
+                                                                "",
+                                                            endTime: snapshot
+                                                                    .data!
+                                                                    .data![
+                                                                        index]
+                                                                    .endtime ??
+                                                                "",
+                                                            title: snapshot
+                                                                .data!
+                                                                .data![index]
+                                                                .title,
+                                                            startDate: snapshot
+                                                                    .data!
+                                                                    .data![
+                                                                        index]
+                                                                    .startdate ??
+                                                                "",
+                                                            endDate: snapshot
+                                                                    .data!
+                                                                    .data![
+                                                                        index]
+                                                                    .enddate ??
+                                                                "",
+                                                            description: snapshot
+                                                                .data!
+                                                                .data![index]
+                                                                .description),
+                                                      ));
+                                            },
+                                            child: EventCard(
+                                              title: controller.snapShot.title,
+                                              description: controller
+                                                  .snapShot.description,
+                                              startDate:
+                                                  controller.snapShot.startdate,
+                                              index: index,
+                                            ));
+                                      },
+                                      itemCount: snapshot.data!.data!.length);
+                                } else {
+                                  return EmptyList(name: 'No Events');
+                                }
+                              } else if (snapshot.hasError) {
+                                return Icon(Icons.error_outline);
                               } else {
-                                return EmptyList(name: 'No Events');
+                                return Loader();
                               }
-                            } else if (snapshot.hasError) {
-                              return Icon(Icons.error_outline);
-                            } else {
-                              return Loader();
-                            }
-                          }),
-                    ),
-                  ],
+                            }),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -213,8 +222,7 @@ class EventDialog extends StatelessWidget {
               11.w.pw,
               Text(
                 DateHelper.convertDateFormatToDayMonthYearDateFormat(
-                        startDate!) ??
-                    "",
+                    startDate!),
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',
@@ -231,9 +239,7 @@ class EventDialog extends StatelessWidget {
               ),
               11.w.pw,
               Text(
-                DateHelper.convertDateFormatToDayMonthYearDateFormat(
-                        endDate!) ??
-                    "",
+                DateHelper.convertDateFormatToDayMonthYearDateFormat(endDate!),
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',
@@ -278,7 +284,7 @@ class EventDialog extends StatelessWidget {
               ),
               11.w.pw,
               Text(
-                DateHelper.formatTimeToAMPM(startTime!) ?? "",
+                DateHelper.formatTimeToAMPM(startTime!),
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',
@@ -295,7 +301,7 @@ class EventDialog extends StatelessWidget {
               ),
               11.w.pw,
               Text(
-                DateHelper.formatTimeToAMPM(endTime!) ?? "",
+                DateHelper.formatTimeToAMPM(endTime!),
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',
@@ -372,7 +378,7 @@ class EventCard extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.fromLTRB(14.w, 13.h, 18.w, 0),
         child: SizedBox(
-          //  height: 96.w,
+            //  height: 96.w,
             width: 343.w,
             child: Card(
                 elevation: 1,

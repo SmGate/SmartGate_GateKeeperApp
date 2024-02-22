@@ -721,6 +721,8 @@ PODS:
     - Flutter
   - flutter_notification_channel (0.0.1):
     - Flutter
+  - flutter_tts (0.0.1):
+    - Flutter
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
@@ -859,6 +861,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - flutter_notification_channel (from `.symlinks/plugins/flutter_notification_channel/ios`)
+  - flutter_tts (from `.symlinks/plugins/flutter_tts/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
@@ -904,6 +907,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_local_notifications/ios"
   flutter_notification_channel:
     :path: ".symlinks/plugins/flutter_notification_channel/ios"
+  flutter_tts:
+    :path: ".symlinks/plugins/flutter_tts/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   image_picker_ios:
@@ -935,13 +940,14 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
   flutter_notification_channel: 42a4f4938a3654cca62aa2a51aba0021dbfcac88
+  flutter_tts: 0f492aab6accf87059b72354fcb4ba934304771d
   fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
   GoogleAppMeasurement: 722db6550d1e6d552b08398b69a975ac61039338
   GoogleDataTransport: 57c22343ab29bc686febbf7cbb13bad167c2d8fe
   GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
   "gRPC-C++": 0968bace703459fd3e5dcb0b2bed4c573dbff046
   gRPC-Core: 17108291d84332196d3c8466b48f016fc17d816d
-  image_picker_ios: 99dfe1854b4fa34d0364e74a78448a0151025425
+  image_picker_ios: b545a5f16c0fa88e3ecbbce3ed4de45567a8ec18
   leveldb-library: e74c27d8fbd22854db7cb467968a0b8aa1db7126
   nanopb: d4d75c12cd1316f4a64e3c6963f879ecd4b5e0d5
   path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
@@ -949,7 +955,7 @@ SPEC CHECKSUMS:
   shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
   sqflite: 673a0e54cc04b7d6dba8d24fb8095b31c3a99eec
   Toast: ec33c32b8688982cecc6348adeae667c1b9938da
-  url_launcher_ios: bbd758c6e7f9fd7b5b1d4cde34d2b95fcce5e812
+  url_launcher_ios: 6116280ddcfe98ab8820085d8d76ae7449447586
 
 PODFILE CHECKSUM: bf5846431a293fc986764248a5d6eb7b47d80a87
 

@@ -21,105 +21,117 @@ class PreApproveEntryResidents extends StatelessWidget {
         builder: (controller) {
           return SafeArea(
             child: Scaffold(
-                body: Column(
-              children: [
-                MyBackButton(
-                  text: 'Residents',
-                ),
-                22.h.ph,
-                Expanded(
-                  child: FutureBuilder(
-                      future: controller.preApproveEntryResidentApi(
-                          controller.userdata.userid!,
-                          controller.userdata.bearerToken!),
-                      builder: (BuildContext context, AsyncSnapshot snapshot) {
-                        if (snapshot.hasData) {
-                          if (snapshot.data.data != null &&
-                              snapshot.data!.data.length != 0) {
-                            return ListView.builder(
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 16.w, vertical: 10.h),
-                                    child: SizedBox(
-                                      width: 300.w,
-                                      height: 80.w,
-                                      child: Card(
-                                        elevation: 1,
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: ListTile(
-                                            titleTextStyle: GoogleFonts.ubuntu(
-                                                color: HexColor('#606470'),
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 14.sp),
-                                            subtitleTextStyle:
-                                                GoogleFonts.ubuntu(
-                                                    color: HexColor('#333333'),
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 11.sp),
-                                            onTap: () {
-                                              Get.toNamed(preApprovedGuests,
-                                                  arguments: [
-                                                    snapshot.data.data[index],
-                                                    controller
-                                                        .userdata.bearerToken!
-                                                  ]);
-                                            },
-                                            leading: CachedNetworkImage(
-                                              imageBuilder:
-                                                  (context, imageProvider) =>
-                                                      Container(
+                body: Directionality(
+              textDirection: TextDirection.ltr,
+              child: Column(
+                children: [
+                  MyBackButton(
+                    text: 'residents'.tr,
+                  ),
+                  22.h.ph,
+                  Expanded(
+                    child: FutureBuilder(
+                        future: controller.preApproveEntryResidentApi(
+                            controller.userdata.userid!,
+                            controller.userdata.bearerToken!),
+                        builder:
+                            (BuildContext context, AsyncSnapshot snapshot) {
+                          if (snapshot.hasData) {
+                            if (snapshot.data.data != null &&
+                                snapshot.data!.data.length != 0) {
+                              return ListView.builder(
+                                  itemBuilder: (context, index) {
+                                    return Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 16.w, vertical: 10.h),
+                                      child: SizedBox(
+                                        width: double.infinity,
+                                        //  height: 80.w,
+                                        child: Card(
+                                          elevation: 1,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 8.0, bottom: 8.0),
+                                            child: ListTile(
+                                              contentPadding: EdgeInsets.only(
+                                                  right: 10, left: 0),
+                                              titleTextStyle:
+                                                  GoogleFonts.ubuntu(
+                                                      color:
+                                                          HexColor('#606470'),
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 14.sp),
+                                              subtitleTextStyle:
+                                                  GoogleFonts.ubuntu(
+                                                      color:
+                                                          HexColor('#333333'),
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      fontSize: 11.sp),
+                                              onTap: () {
+                                                Get.toNamed(preApprovedGuests,
+                                                    arguments: [
+                                                      snapshot.data.data[index],
+                                                      controller
+                                                          .userdata.bearerToken!
+                                                    ]);
+                                              },
+                                              leading: CachedNetworkImage(
+                                                imageBuilder:
+                                                    (context, imageProvider) =>
+                                                        Container(
+                                                  width: 100.w,
+                                                  height: 100.w,
+                                                  decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    image: DecorationImage(
+                                                        image: imageProvider,
+                                                        fit: BoxFit.contain),
+                                                  ),
+                                                ),
                                                 width: 100.w,
                                                 height: 100.w,
-                                                decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: DecorationImage(
-                                                      image: imageProvider,
-                                                      fit: BoxFit.contain),
+                                                imageUrl: Api.imageBaseUrl +
+                                                    snapshot
+                                                        .data.data![index].image
+                                                        .toString(),
+                                                placeholder: (context, url) =>
+                                                    Center(
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                    color: primaryColor,
+                                                  ),
                                                 ),
+                                                errorWidget:
+                                                    (context, url, error) =>
+                                                        Icon(Icons.error),
                                               ),
-                                              width: 100.w,
-                                              height: 100.w,
-                                              imageUrl: Api.imageBaseUrl +
-                                                  snapshot
-                                                      .data.data![index].image
-                                                      .toString(),
-                                              placeholder: (context, url) =>
-                                                  Center(
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  color: primaryColor,
-                                                ),
-                                              ),
-                                              errorWidget:
-                                                  (context, url, error) =>
-                                                      Icon(Icons.error),
+                                              title: Text(
+                                                  "${snapshot.data.data![index].firstname.toString()} ${snapshot.data.data![index].lastname.toString()}"),
+                                              subtitle: Text(
+                                                  "${snapshot.data.data![index].address.toString()}"),
                                             ),
-                                            title: Text(
-                                                "${snapshot.data.data![index].firstname.toString()} ${snapshot.data.data![index].lastname.toString()}"),
-                                            subtitle: Text(
-                                                "${snapshot.data.data![index].address.toString()}"),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  );
-                                },
-                                itemCount: snapshot.data.data.length);
+                                    );
+                                  },
+                                  itemCount: snapshot.data.data.length);
+                            } else {
+                              return EmptyList(
+                                name: 'No Residents',
+                              );
+                            }
+                          } else if (snapshot.hasError) {
+                            return Loader();
                           } else {
-                            return EmptyList(
-                              name: 'No Residents',
-                            );
+                            return Loader();
                           }
-                        } else if (snapshot.hasError) {
-                          return Loader();
-                        } else {
-                          return Loader();
-                        }
-                      }),
-                ),
-              ],
+                        }),
+                  ),
+                ],
+              ),
             )),
           );
         });

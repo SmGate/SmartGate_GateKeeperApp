@@ -1,18 +1,54 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_tts/flutter_tts.dart';
+import 'package:gatekeeper/Constants/instructions_label.dart';
 import 'package:gatekeeper/Module/HomeScreen/Controller/home_screen_controller.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../Constants/constants.dart';
 import '../../../Routes/set_routes.dart';
 import '../../../Services/Shared Preferences/MySharedPreferences.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   var _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final List local = [
+    {'name': 'ENGLISH', 'local': Locale('en', 'Us')},
+    {'name': 'اردو', 'local': Locale('ur', 'PK')}
+  ];
+
+  FlutterTts flutterTts = FlutterTts();
+
+  Future<void> speakUrdu(String text) async {
+    await flutterTts.setLanguage('ur-PK'); // Set Urdu language
+    await flutterTts.setPitch(1.0); // Set pitch (optional)
+    await flutterTts.setSpeechRate(0.5); // Set speech rate (optional)
+    await flutterTts.setVolume(1.0); // Set volume (optional)
+
+    await flutterTts.speak(text);
+  }
+
+  Future<void> stopSpeaking() async {
+    await flutterTts.stop();
+  }
+
+  bool isSpeaking = false;
+  bool isSpeaking1 = false;
+  bool isSpeaking2 = false;
+  bool isSpeaking3 = false;
+  bool isSpeaking4 = false;
+  bool isSpeaking5 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +57,7 @@ class HomeScreen extends StatelessWidget {
       builder: (controller) => SafeArea(
         child: Scaffold(
           key: _scaffoldKey,
-          endDrawer: MyDrawer(),
+          // endDrawer: MyDrawer(),
           body: SingleChildScrollView(
             child: Stack(
               children: [
@@ -36,27 +72,27 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 38, top: 78),
+                          padding:
+                              EdgeInsets.only(left: 20, top: 50, right: 20),
                           child: Row(
                             children: [
-                              GestureDetector(
-                                onTap: () {
-                                  _scaffoldKey.currentState!.openEndDrawer();
-                                },
-                                child: Container(
-                                  width: 20,
-                                  child: SvgPicture.asset('assets/drawer.svg'),
-                                ),
-                              ),
-                              20.w.pw,
                               Text(
-                                'Home',
+                                'home'.tr,
                                 style: GoogleFonts.ubuntu(
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 16,
                                     color: Colors.white),
                               ),
+                              Spacer(),
+                              IconButton(
+                                  onPressed: () {
+                                    _showBottomSheet(context);
+                                  },
+                                  icon: Icon(
+                                    Icons.language,
+                                    color: Colors.white,
+                                  ))
                             ],
                           ),
                         ),
@@ -77,52 +113,9 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           height: 13,
                         ),
-                        // Padding(
-                        //   padding: EdgeInsets.only(left: 25),
-                        //   child: Text(
-                        //     'Please enter services you want',
-                        //     style: GoogleFonts.ubuntu(
-                        //         fontStyle: FontStyle.normal,
-                        //         fontWeight: FontWeight.w400,
-                        //         fontSize: 12,
-                        //         color: HexColor('#FFD2D2')),
-                        //   ),
-                        // ),
                         SizedBox(
                           height: 9,
                         ),
-                        // Padding(
-                        //   padding: EdgeInsets.only(left: 25),
-                        //   child: SizedBox(
-                        //     height: 48,
-                        //     width: 325,
-                        //     child: TextField(
-                        //       decoration: InputDecoration(
-                        //           suffixIcon: IconButton(
-                        //             onPressed: () {},
-                        //             icon: Container(
-                        //               child: SvgPicture.asset(
-                        //                 'assets/arrow.svg',
-                        //               ),
-                        //             ),
-                        //           ),
-                        //           enabledBorder: OutlineInputBorder(
-                        //             borderRadius: BorderRadius.circular(15.0),
-                        //             borderSide:
-                        //                 BorderSide(color: Color(0xffF4F4F4)),
-                        //           ),
-                        //           filled: true,
-                        //           fillColor: Color(0xffFFFFFF),
-                        //           labelText: 'Search',
-                        //           border: OutlineInputBorder(
-                        //             borderSide: BorderSide(
-                        //               style: BorderStyle.solid,
-                        //             ),
-                        //             borderRadius: BorderRadius.circular(15.0),
-                        //           )),
-                        //     ),
-                        //   ),
-                        // ),
                         SizedBox(
                           height: 13,
                         ),
@@ -145,11 +138,14 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 25, top: 30),
+                          padding: EdgeInsets.only(
+                              left: 25,
+                              top: 30,
+                              right: Get.locale?.languageCode == 'ur' ? 30 : 0),
                           child: Row(
                             children: [
                               Text(
-                                'Our Services',
+                                'services'.tr,
                                 style: GoogleFonts.ubuntu(
                                     fontStyle: FontStyle.normal,
                                     fontWeight: FontWeight.w700,
@@ -183,7 +179,10 @@ class HomeScreen extends StatelessWidget {
                                 arguments: controller.user);
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20),
+                            padding: EdgeInsets.only(
+                                left: 20,
+                                right:
+                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
                             child: SizedBox(
                               height: 64,
                               width: 324,
@@ -207,34 +206,74 @@ class HomeScreen extends StatelessWidget {
                                           SizedBox(
                                             width: 12,
                                           ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Pre Approve Entries',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 13,
-                                                    color: HexColor('#666592')),
-                                              ),
-                                              Text(
-                                                'You Can Pre Approve Your Visitor',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: HexColor('#AAA9C9')),
-                                              ),
-                                            ],
-                                          ),
                                           Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 59.65),
-                                            child: SvgPicture.asset(
-                                                'assets/greaterthan.svg'),
-                                          )
+                                            padding: EdgeInsets.only(
+                                                right:
+                                                    Get.locale?.languageCode ==
+                                                            'ur'
+                                                        ? 20
+                                                        : 0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'pre_approved_entriese'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 13,
+                                                      color:
+                                                          HexColor('#666592')),
+                                                ),
+                                                Text(
+                                                  'you_can_pre_approve_visitor'
+                                                      .tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 10,
+                                                      color:
+                                                          HexColor('#AAA9C9')),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Spacer(),
+                                          isSpeaking == true
+                                              ? IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking = false;
+                                                      stopSpeaking();
+
+                                                      print(isSpeaking);
+                                                    });
+                                                  },
+                                                  icon: Icon(
+                                                      Icons.volume_down_alt))
+                                              : IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking = true;
+                                                      speakUrdu(InstructionLabels
+                                                          .PRE_APPROVED_ENTRIESE_INS);
+                                                      print(isSpeaking);
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons.volume_off)),
+                                          // Get.locale?.languageCode == 'ur'
+                                          //     ? SizedBox()
+                                          //     : Padding(
+                                          //         padding: EdgeInsets.only(
+                                          //             left: 59.65),
+                                          //         child: SvgPicture.asset(
+                                          //             'assets/greaterthan.svg'),
+                                          //       )
                                         ],
                                       ),
                                     ),
@@ -253,7 +292,10 @@ class HomeScreen extends StatelessWidget {
                                 arguments: controller.user);
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20),
+                            padding: EdgeInsets.only(
+                                left: 20,
+                                right:
+                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
                             child: SizedBox(
                               height: 64,
                               width: 324,
@@ -277,34 +319,75 @@ class HomeScreen extends StatelessWidget {
                                           SizedBox(
                                             width: 12,
                                           ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Events',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 13,
-                                                    color: HexColor('#666592')),
-                                              ),
-                                              Text(
-                                                'You Can View Events',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: HexColor('#AAA9C9')),
-                                              ),
-                                            ],
-                                          ),
                                           Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 115.65),
-                                            child: SvgPicture.asset(
-                                                'assets/greaterthan.svg'),
-                                          )
+                                            padding: EdgeInsets.only(
+                                                right:
+                                                    Get.locale?.languageCode ==
+                                                            'ur'
+                                                        ? 20
+                                                        : 0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'events'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 13,
+                                                      color:
+                                                          HexColor('#666592')),
+                                                ),
+                                                Text(
+                                                  'you_can_view_events'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 10,
+                                                      color:
+                                                          HexColor('#AAA9C9')),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Spacer(),
+                                          isSpeaking1 == true
+                                              ? IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking1 = false;
+                                                      stopSpeaking();
+
+                                                      print(isSpeaking1);
+                                                    });
+                                                  },
+                                                  icon: Icon(
+                                                      Icons.volume_down_alt))
+                                              : IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking1 = true;
+                                                      speakUrdu(
+                                                          InstructionLabels
+                                                              .EVENTS_INS);
+
+                                                      print(isSpeaking1);
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons.volume_off)),
+                                          // Get.locale?.languageCode == 'ur'
+                                          //     ? SizedBox()
+                                          //     : Padding(
+                                          //         padding: EdgeInsets.only(
+                                          //             left: 115.65),
+                                          //         child: SvgPicture.asset(
+                                          //             'assets/greaterthan.svg'),
+                                          //       )
                                         ],
                                       ),
                                     ),
@@ -323,7 +406,10 @@ class HomeScreen extends StatelessWidget {
                                 arguments: controller.user);
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20),
+                            padding: EdgeInsets.only(
+                                left: 20,
+                                right:
+                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
                             child: SizedBox(
                               height: 64,
                               width: 324,
@@ -347,34 +433,74 @@ class HomeScreen extends StatelessWidget {
                                           SizedBox(
                                             width: 12,
                                           ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Notice Board',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 13,
-                                                    color: HexColor('#666592')),
-                                              ),
-                                              Text(
-                                                'Announcements From Admin',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: HexColor('#AAA9C9')),
-                                              ),
-                                            ],
-                                          ),
                                           Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 75.65),
-                                            child: SvgPicture.asset(
-                                                'assets/greaterthan.svg'),
-                                          )
+                                            padding: EdgeInsets.only(
+                                                right:
+                                                    Get.locale?.languageCode ==
+                                                            'ur'
+                                                        ? 20
+                                                        : 0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'notice_board'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 13,
+                                                      color:
+                                                          HexColor('#666592')),
+                                                ),
+                                                Text(
+                                                  'announcement_from_admin'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 10,
+                                                      color:
+                                                          HexColor('#AAA9C9')),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Spacer(),
+                                          isSpeaking2 == true
+                                              ? IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking2 = false;
+                                                      stopSpeaking();
+
+                                                      print(isSpeaking2);
+                                                    });
+                                                  },
+                                                  icon: Icon(
+                                                      Icons.volume_down_alt))
+                                              : IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking2 = true;
+                                                      speakUrdu(InstructionLabels
+                                                          .NOTICE_BOARD_INS);
+
+                                                      print(isSpeaking2);
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons.volume_off)),
+                                          // Get.locale?.languageCode == 'ur'
+                                          //     ? SizedBox()
+                                          //     : Padding(
+                                          //         padding: EdgeInsets.only(
+                                          //             left: 75.65),
+                                          //         child: SvgPicture.asset(
+                                          //             'assets/greaterthan.svg'),
+                                          //       )
                                         ],
                                       ),
                                     ),
@@ -393,7 +519,10 @@ class HomeScreen extends StatelessWidget {
                                 arguments: controller.user);
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20),
+                            padding: EdgeInsets.only(
+                                left: 20,
+                                right:
+                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
                             child: SizedBox(
                               height: 64,
                               width: 324,
@@ -419,34 +548,75 @@ class HomeScreen extends StatelessWidget {
                                           SizedBox(
                                             width: 12,
                                           ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Visitor',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 13,
-                                                    color: HexColor('#666592')),
-                                              ),
-                                              Text(
-                                                'Visitors Detail',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: HexColor('#AAA9C9')),
-                                              ),
-                                            ],
-                                          ),
                                           Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 138.65),
-                                            child: SvgPicture.asset(
-                                                'assets/greaterthan.svg'),
-                                          )
+                                            padding: EdgeInsets.only(
+                                                right:
+                                                    Get.locale?.languageCode ==
+                                                            'ur'
+                                                        ? 20
+                                                        : 0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'visitor'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 13,
+                                                      color:
+                                                          HexColor('#666592')),
+                                                ),
+                                                Text(
+                                                  'visitor_details'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 10,
+                                                      color:
+                                                          HexColor('#AAA9C9')),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+
+                                          Spacer(),
+                                          isSpeaking3 == true
+                                              ? IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking3 = false;
+                                                      stopSpeaking();
+                                                      print(isSpeaking3);
+                                                    });
+                                                  },
+                                                  icon: Icon(
+                                                      Icons.volume_down_alt))
+                                              : IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking3 = true;
+                                                      speakUrdu(
+                                                          InstructionLabels
+                                                              .VISITOR_INS);
+
+                                                      print(isSpeaking3);
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons.volume_off)),
+                                          // Get.locale?.languageCode == 'ur'
+                                          //     ? SizedBox()
+                                          //     : Padding(
+                                          //         padding: EdgeInsets.only(
+                                          //             left: 138.65),
+                                          //         child: SvgPicture.asset(
+                                          //             'assets/greaterthan.svg'),
+                                          //       )
                                         ],
                                       ),
                                     ),
@@ -465,7 +635,10 @@ class HomeScreen extends StatelessWidget {
                                 arguments: controller.user);
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20),
+                            padding: EdgeInsets.only(
+                                left: 20,
+                                right:
+                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
                             child: SizedBox(
                               height: 64,
                               width: 324,
@@ -491,33 +664,73 @@ class HomeScreen extends StatelessWidget {
                                           SizedBox(
                                             width: 12,
                                           ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Residential Emergency',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 13,
-                                                    color: HexColor('#666592')),
-                                              ),
-                                              Text(
-                                                'Residential Emergency',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: HexColor('#AAA9C9')),
-                                              ),
-                                            ],
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                                right:
+                                                    Get.locale?.languageCode ==
+                                                            'ur'
+                                                        ? 20
+                                                        : 0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'residential_emergency'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 13,
+                                                      color:
+                                                          HexColor('#666592')),
+                                                ),
+                                                Text(
+                                                  'residential_emergency'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 10,
+                                                      color:
+                                                          HexColor('#AAA9C9')),
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                          SizedBox(
-                                            width: 60,
-                                          ),
-                                          SvgPicture.asset(
-                                              'assets/greaterthan.svg')
+
+                                          Spacer(),
+                                          isSpeaking4 == true
+                                              ? IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking4 = false;
+                                                      stopSpeaking();
+                                                      print(isSpeaking4);
+                                                    });
+                                                  },
+                                                  icon: Icon(
+                                                      Icons.volume_down_alt))
+                                              : IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking4 = true;
+                                                      speakUrdu(InstructionLabels
+                                                          .RESIDENTIAL_EMERGENCY_INS);
+
+                                                      print(isSpeaking4);
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons.volume_off)),
+                                          // SizedBox(
+                                          //   width: 60,
+                                          // ),
+                                          // Get.locale?.languageCode == 'ur'
+                                          //     ? SizedBox()
+                                          //     : SvgPicture.asset(
+                                          //         'assets/greaterthan.svg')
                                         ],
                                       ),
                                     ),
@@ -536,7 +749,10 @@ class HomeScreen extends StatelessWidget {
                             Get.offAllNamed(loginscreen);
                           },
                           child: Padding(
-                            padding: EdgeInsets.only(left: 20),
+                            padding: EdgeInsets.only(
+                                left: 20,
+                                right:
+                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
                             child: SizedBox(
                               height: 64,
                               width: 324,
@@ -562,34 +778,76 @@ class HomeScreen extends StatelessWidget {
                                           SizedBox(
                                             width: 12,
                                           ),
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                'Logout',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w700,
-                                                    fontSize: 13,
-                                                    color: HexColor('#666592')),
-                                              ),
-                                              Text(
-                                                'Logout Yourself',
-                                                style: GoogleFonts.ubuntu(
-                                                    fontStyle: FontStyle.normal,
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 10,
-                                                    color: HexColor('#AAA9C9')),
-                                              ),
-                                            ],
-                                          ),
                                           Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 125.65),
-                                            child: SvgPicture.asset(
-                                                'assets/greaterthan.svg'),
-                                          )
+                                            padding: EdgeInsets.only(
+                                                right:
+                                                    Get.locale?.languageCode ==
+                                                            'ur'
+                                                        ? 20
+                                                        : 0),
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'logout'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 13,
+                                                      color:
+                                                          HexColor('#666592')),
+                                                ),
+                                                Text(
+                                                  'logout_yourself'.tr,
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontStyle:
+                                                          FontStyle.normal,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 10,
+                                                      color:
+                                                          HexColor('#AAA9C9')),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+
+                                          Spacer(),
+                                          isSpeaking5 == true
+                                              ? IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking5 = false;
+                                                      stopSpeaking();
+
+                                                      print(isSpeaking5);
+                                                    });
+                                                  },
+                                                  icon: Icon(
+                                                      Icons.volume_down_alt))
+                                              : IconButton(
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      isSpeaking5 = true;
+                                                      speakUrdu(
+                                                          InstructionLabels
+                                                              .LOGOUT_INS);
+
+                                                      print(isSpeaking5);
+                                                    });
+                                                  },
+                                                  icon: Icon(Icons.volume_off)),
+                                          // Get.locale?.languageCode == 'ur'
+                                          //     ? SizedBox()
+                                          //     : Padding(
+                                          //         padding: EdgeInsets.only(
+                                          //             left: 125.65),
+                                          //         child: SvgPicture.asset(
+                                          //             'assets/greaterthan.svg'),
+                                          //       )
                                         ],
                                       ),
                                     ),
@@ -599,6 +857,9 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+                        SizedBox(
+                          height: 20,
+                        )
                       ],
                     ),
                   ),
@@ -609,6 +870,66 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  //////  METHOD FOR TEXT TO SPEECH
+
+  void _showBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
+          child: Directionality(
+            textDirection: TextDirection.ltr,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "SELECT LANGUAGE",
+                  style: TextStyle(fontSize: 20),
+                ),
+                Container(
+                  height: 150,
+                  padding: EdgeInsets.all(16.0),
+                  child: ListView.builder(
+                      itemCount: local.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                _setLanguage(local[index]['local']);
+                              },
+                              child: Container(
+                                  height: 30,
+                                  // color: Colors.red,
+                                  child: Text(local[index]['name'])),
+                            ),
+                            Divider()
+                          ],
+                        );
+                      }),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _setLanguage(
+    Locale local,
+  ) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    preferences.setString('languageCode', local.languageCode);
+    preferences.setString('countryCode', local.countryCode ?? '');
+
+    Get.back();
+    Get.updateLocale(local);
   }
 }
 
@@ -651,7 +972,7 @@ class MyDrawer extends StatelessWidget {
               await FirebaseMessaging.instance.deleteToken();
               final HomeScreenController _homeScreenController = Get.find();
               _homeScreenController.logoutApi(
-                  token: _homeScreenController.user!.bearerToken!);
+                  token: _homeScreenController.user.bearerToken!);
             },
           ),
         ],

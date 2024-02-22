@@ -14,7 +14,7 @@ class PreApproveEntryResdientsController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
+   
     super.onInit();
     print("init");
     userdata = this.user;
@@ -36,6 +36,6 @@ class PreApproveEntryResdientsController extends GetxController {
       return PreApproveEntry.fromJson(data);
     }
     return PreApproveEntry.fromJson(data);
-    ;
+    
   }
 }

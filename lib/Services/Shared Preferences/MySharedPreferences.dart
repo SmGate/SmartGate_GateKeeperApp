@@ -62,6 +62,7 @@ class MySharedPreferences {
       value.remove(roleIdSPKey);
       value.remove(residentIdSPKey);
       value.remove(subAminIdSPKey);
+      
     });
   }
 }

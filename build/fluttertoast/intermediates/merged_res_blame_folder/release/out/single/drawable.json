@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/drawable/notification_bg.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/drawable/notification_bg_low.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/drawable/corner.xml",
+        "source": "/Users/tms/.pub-cache/hosted/pub.dev/fluttertoast-8.2.4/android/src/main/res/drawable/corner.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/drawable/notification_icon_background.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/b7772848492288dba1570529523f0b4b/transformed/core-1.6.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/fluttertoast/intermediates/merged_res/release/drawable/toast_bg.xml",
+        "source": "/Users/tms/.pub-cache/hosted/pub.dev/fluttertoast-8.2.4/android/src/main/res/drawable/toast_bg.xml"
+    }
+]

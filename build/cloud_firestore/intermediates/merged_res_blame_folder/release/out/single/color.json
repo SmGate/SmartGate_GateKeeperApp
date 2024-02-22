@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_res/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/57979c84e0c01a1adaddca83ebee2eca/transformed/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_res/release/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/57979c84e0c01a1adaddca83ebee2eca/transformed/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/cloud_firestore/intermediates/merged_res/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/tms/.gradle/caches/transforms-3/57979c84e0c01a1adaddca83ebee2eca/transformed/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_text_dark.xml"
+    }
+]

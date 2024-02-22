@@ -27,91 +27,92 @@ class _LoginState extends State<Login> {
               return SingleChildScrollView(
                 child: Form(
                   key: _formKey,
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        38.h.ph,
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 58.w),
-                          child: Image.asset(
-                            'assets/login_vector.png',
-                            width: 302.w,
-                            height: 201.w,
-                          ),
-                        ),
-                        33.91.h.ph,
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(44.w, 0, 0, 0),
-                          child: Text(
-                            "Welcome To",
-                            style: GoogleFonts.ubuntu(
-                              color: HexColor('#4D4D4D'),
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 36.sp,
+                  child: Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          38.h.ph,
+                          Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 58.w),
+                            child: Image.asset(
+                              'assets/login_vector.png',
+                              width: 302.w,
+                              height: 201.w,
                             ),
                           ),
-                        ),
-                        19.h.ph,
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(46.w, 0, 0, 0),
-                          child: Text(
-                            "YOUR ACCOUNT",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.ubuntu(
-                                color: HexColor('#717171'),
+                          33.91.h.ph,
+                          Center(
+                            child: Text(
+                              "welcom_to".tr,
+                              style: GoogleFonts.ubuntu(
+                                color: HexColor('#4D4D4D'),
                                 fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 15.sp,
-                                letterSpacing: 3.w),
-                          ),
-                        ),
-                        34.h.ph,
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(158.w, 0, 0, 0),
-                          child: Text(
-                            "Log In",
-                            style: GoogleFonts.ubuntu(
-                              color: HexColor('#FF9900'),
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20.sp,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 36.sp,
+                              ),
                             ),
                           ),
-                        ),
-                        38.h.ph,
-                        MyTextFormField(
-                          controller: controller.userCnicController,
-                          textInputType: TextInputType.number,
-                          validator: emptyStringValidator,
-                          hintText: 'CNIC',
-                          labelText: 'CNIC',
-                        ),
-                        MyPasswordTextFormField(
-                            controller: controller.userPasswordController,
-                            validator: emptyStringValidator,
-                            labelText: 'Password',
-                            hintText: 'Password',
-                            togglePasswordView: controller.togglePasswordView,
-                            obscureText: controller.isHidden),
-                        45.h.ph,
-                        Center(
-                          child: MyButton(
-                            loading: controller.isLoading,
-                            name: 'Login',
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                if (!controller.isLoading) {
-                                  controller.loginApi(
-                                      controller.userCnicController.text,
-                                      controller.userPasswordController.text);
-                                }
-                              }
-                            },
+                          19.h.ph,
+                          Center(
+                            child: Text(
+                              "your_account".tr,
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.ubuntu(
+                                  color: HexColor('#717171'),
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15.sp,
+                                  letterSpacing: 3.w),
+                            ),
                           ),
-                        ),
-                        10.h.ph
-                      ]),
+                          34.h.ph,
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(158.w, 0, 0, 0),
+                            child: Text(
+                              "login".tr,
+                              style: GoogleFonts.ubuntu(
+                                color: HexColor('#FF9900'),
+                                fontStyle: FontStyle.normal,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20.sp,
+                              ),
+                            ),
+                          ),
+                          38.h.ph,
+                          MyTextFormField(
+                            controller: controller.userCnicController,
+                            textInputType: TextInputType.number,
+                            validator: emptyStringValidator,
+                            hintText: 'CNIC',
+                            labelText: 'CNIC',
+                          ),
+                          MyPasswordTextFormField(
+                              controller: controller.userPasswordController,
+                              validator: emptyStringValidator,
+                              labelText: 'Password',
+                              hintText: 'Password',
+                              togglePasswordView: controller.togglePasswordView,
+                              obscureText: controller.isHidden),
+                          45.h.ph,
+                          Center(
+                            child: MyButton(
+                              loading: controller.isLoading,
+                              name: 'login'.tr,
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  if (!controller.isLoading) {
+                                    controller.loginApi(
+                                        controller.userCnicController.text,
+                                        controller.userPasswordController.text);
+                                  }
+                                }
+                              },
+                            ),
+                          ),
+                          10.h.ph
+                        ]),
+                  ),
                 ),
               );
             }),
