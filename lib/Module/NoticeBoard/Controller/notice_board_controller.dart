@@ -15,7 +15,7 @@ class NoticeBoardController extends GetxController {
   var snapShot;
   @override
   void onInit() {
-    // TODO: implement onInit
+   
     super.onInit();
     userdata = data;
   }

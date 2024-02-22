@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -651,7 +653,7 @@ class MyDrawer extends StatelessWidget {
               await FirebaseMessaging.instance.deleteToken();
               final HomeScreenController _homeScreenController = Get.find();
               _homeScreenController.logoutApi(
-                  token: _homeScreenController.user!.bearerToken!);
+                  token: _homeScreenController.user.bearerToken!);
             },
           ),
         ],

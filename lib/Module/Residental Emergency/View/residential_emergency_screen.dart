@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gatekeeper/Widgets/Empty%20List/empty_list.dart';
@@ -218,7 +220,7 @@ class EmergencyDialog extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 26.w),
             child: Text(
-                convertDateFormatToDayMonthYearDateFormat(createdAt!) ?? "",
+                convertDateFormatToDayMonthYearDateFormat(createdAt!) ,
                 style: GoogleFonts.ubuntu(
                     fontWeight: FontWeight.w500,
                     fontSize: 14.sp,

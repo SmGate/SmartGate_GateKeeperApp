@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -213,8 +215,7 @@ class EventDialog extends StatelessWidget {
               11.w.pw,
               Text(
                 DateHelper.convertDateFormatToDayMonthYearDateFormat(
-                        startDate!) ??
-                    "",
+                        startDate!) ,
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',
@@ -232,8 +233,7 @@ class EventDialog extends StatelessWidget {
               11.w.pw,
               Text(
                 DateHelper.convertDateFormatToDayMonthYearDateFormat(
-                        endDate!) ??
-                    "",
+                        endDate!) ,
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',
@@ -278,7 +278,7 @@ class EventDialog extends StatelessWidget {
               ),
               11.w.pw,
               Text(
-                DateHelper.formatTimeToAMPM(startTime!) ?? "",
+                DateHelper.formatTimeToAMPM(startTime!),
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',
@@ -295,7 +295,7 @@ class EventDialog extends StatelessWidget {
               ),
               11.w.pw,
               Text(
-                DateHelper.formatTimeToAMPM(endTime!) ?? "",
+                DateHelper.formatTimeToAMPM(endTime!),
                 style: GoogleFonts.ubuntu(
                     color: HexColor(
                       '#4D4D4D',

@@ -425,12 +425,12 @@ class PreApproveEntryDialog extends StatelessWidget {
           23.33.ph,
           DialogBoxElipseHeading(text: 'Mobile No'),
           DialogBoxText(
-            text: mobileno ?? "",
+            text: mobileno ,
           ),
           23.33.ph,
           DialogBoxElipseHeading(text: 'Expected Arrival Time'),
           DialogBoxText(
-            text: Hour12formatTime(arrivaltime!) ?? "",
+            text: Hour12formatTime(arrivaltime!) ,
           ),
           23.33.ph,
           DialogBoxElipseHeading(text: 'CNIC'),

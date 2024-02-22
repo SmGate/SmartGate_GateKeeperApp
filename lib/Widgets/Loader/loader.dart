@@ -18,6 +18,6 @@ class Loader extends GetView {
         ],
       ),
     );
-    ;
+   
   }
 }

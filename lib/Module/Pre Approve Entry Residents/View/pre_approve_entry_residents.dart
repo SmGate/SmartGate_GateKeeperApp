@@ -42,13 +42,14 @@ class PreApproveEntryResidents extends StatelessWidget {
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 16.w, vertical: 10.h),
                                     child: SizedBox(
-                                      width: 300.w,
-                                      height: 80.w,
+                                      width: double.infinity,
+                                    //  height: 80.w,
                                       child: Card(
                                         elevation: 1,
                                         child: Padding(
-                                          padding: const EdgeInsets.all(8.0),
+                                          padding: const EdgeInsets.only(top: 8.0,bottom: 8.0),
                                           child: ListTile(
+                                            contentPadding: EdgeInsets.only(right: 10,left: 0),
                                             titleTextStyle: GoogleFonts.ubuntu(
                                                 color: HexColor('#606470'),
                                                 fontWeight: FontWeight.w500,
@@ -96,6 +97,8 @@ class PreApproveEntryResidents extends StatelessWidget {
                                                   (context, url, error) =>
                                                       Icon(Icons.error),
                                             ),
+                                           
+
                                             title: Text(
                                                 "${snapshot.data.data![index].firstname.toString()} ${snapshot.data.data![index].lastname.toString()}"),
                                             subtitle: Text(
