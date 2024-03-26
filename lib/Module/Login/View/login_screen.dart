@@ -83,7 +83,7 @@ class _LoginState extends State<Login> {
                           MyTextFormField(
                             controller: controller.userCnicController,
                             textInputType: TextInputType.number,
-                            validator: emptyStringValidator,
+                            validator: validateExpression,
                             hintText: 'CNIC',
                             labelText: 'CNIC',
                           ),

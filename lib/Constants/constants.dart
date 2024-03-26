@@ -18,6 +18,18 @@ String? emptyStringValidator(String? val) {
   }
 }
 
+//  ID CARD VALIDATOR
+String? validateExpression(String? value) {
+  // Regular expression pattern to match the given expression format
+  RegExp regex = RegExp(r'^\d{5}-\d{7}-\d$');
+  if (value!.isEmpty) {
+    return 'Expression field cannot be empty.';
+  } else if (!regex.hasMatch(value)) {
+    return 'Invalid cnic  hint "37405-7384570-1"';
+  }
+  return null;
+}
+
 String? passwordValidator(String? v) {
   RegExp smallAlphabets = RegExp("(?=.*?[a-z])");
   RegExp capitalAlphabets = RegExp("(?=.*?[A-Z])");

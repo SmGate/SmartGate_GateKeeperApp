@@ -1,7 +1,7 @@
 class InstructionLabels {
   InstructionLabels._();
   static const String PRE_APPROVED_ENTRIESE_INS =
-      "اگر آپ اس اسکرین پر جائیں گے تو وہاں آپ لوگوں کے پہلے سے منظور شدہ اندراج دیکھ سکتے ہیں";
+      "اس اسکرین پر آپ ان لوگوں کو دیکھ سکتے ہو جنکا اندراج پہلے سے گیٹ پر ہوا ہے";
   static const String EVENTS_INS =
       "اگر آپ اس اسکرین پر جائیں گے تو آپ سوسائٹی میں ہونے والے فنکشن کی فہرست دیکھ سکتے ہیں";
   static const String NOTICE_BOARD_INS =

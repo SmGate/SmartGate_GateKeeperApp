@@ -7,7 +7,6 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:gatekeeper/Constants/instructions_label.dart';
 import 'package:gatekeeper/Module/HomeScreen/Controller/home_screen_controller.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:shared_preferences/shared_preferences.dart';

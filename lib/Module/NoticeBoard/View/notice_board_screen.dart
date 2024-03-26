@@ -376,6 +376,9 @@ class NoticeboardCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      SizedBox(
+                        height: 10,
+                      ),
                       Expanded(
                         child: SizedBox(
                           width: 220.w,
