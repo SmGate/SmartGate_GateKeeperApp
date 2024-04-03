@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		aBDHV3h4wItNTNx2PwZjxMiZYKA=
+		3V09yVW3uMBXQ8uCiDJwKJleRgg=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		Y1ciVlskC4Oamb6KXyj4YoYwaPk=
+		pG6m0qc2yFRviQTMUIxUCtyQz6Q=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -23,6 +23,10 @@
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
 		sRH/kyt40haCRHpWI/+GyyYb/pw=
+		</data>
+		<key>flutter_assets/assets/.DS_Store</key>
+		<data>
+		RYt9GjGg50OOra0dRYSLXGjn4AE=
 		</data>
 		<key>flutter_assets/assets/Arrow%201.svg</key>
 		<data>
@@ -68,17 +72,13 @@
 		<data>
 		82ZGy10BQTSxThOHl8uon62Vxso=
 		</data>
-		<key>flutter_assets/assets/emergency.png</key>
-		<data>
-		vnDqMID4i5fkLCU+qQWP6sYoDSo=
-		</data>
-		<key>flutter_assets/assets/event.png</key>
-		<data>
-		zLEx0gnvq7l6rNH8CXmEZT826to=
-		</data>
 		<key>flutter_assets/assets/event.svg</key>
 		<data>
 		GE8jEqRdu25yJjdyzKm0wcJ/u3Q=
+		</data>
+		<key>flutter_assets/assets/event1.png</key>
+		<data>
+		s6aKJTEmYetkbkPOdgsyJ2sn7lg=
 		</data>
 		<key>flutter_assets/assets/event_date_icon.svg</key>
 		<data>
@@ -120,13 +120,13 @@
 		<data>
 		CyjbEGuZ+YySS8xh3NRcZRpIGtk=
 		</data>
-		<key>flutter_assets/assets/noticeboard.png</key>
-		<data>
-		cg+2rYZ5HyObDyxoR8M8xdPQisg=
-		</data>
 		<key>flutter_assets/assets/noticeboard.svg</key>
 		<data>
 		ORAgwHlhIR/WOgl5i/ufCFkeghk=
+		</data>
+		<key>flutter_assets/assets/noticeboard1.png</key>
+		<data>
+		0cF6Gn5AStFKZJYDCaM1yq3Gi2M=
 		</data>
 		<key>flutter_assets/assets/noticeboard_icon.png</key>
 		<data>
@@ -139,6 +139,14 @@
 		<key>flutter_assets/assets/report_history_date_icon.svg</key>
 		<data>
 		Jm7TRGlST9aA9x9pkdKXrdakn0k=
+		</data>
+		<key>flutter_assets/assets/sign.png</key>
+		<data>
+		iV8N9InTjo5lF0jLltZVYOxDCZY=
+		</data>
+		<key>flutter_assets/assets/siren.png</key>
+		<data>
+		g5P9eFsjygS9g0SEiKTR0D4F6ZY=
 		</data>
 		<key>flutter_assets/assets/smartgate.svg</key>
 		<data>
@@ -164,17 +172,9 @@
 		<data>
 		8LzvOKH4WyRKdbALECCytEOHPGA=
 		</data>
-		<key>flutter_assets/assets/team.png</key>
+		<key>flutter_assets/assets/team1.png</key>
 		<data>
-		D1m8XW/9Hl/vUygY6V14gR+IILI=
-		</data>
-		<key>flutter_assets/assets/team.svg</key>
-		<data>
-		wrlKZUgNY2de39mEG2F5/lcUIF4=
-		</data>
-		<key>flutter_assets/assets/visitor.png</key>
-		<data>
-		uoA32/MTbnyXunV8+ICJLPrdI/0=
+		lNYaImJPjEJ1VhQi+wjB+2AZLIA=
 		</data>
 		<key>flutter_assets/assets/warning.png</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		0WemVdbBHgm1TIwVAZ1pZT67QMA=
+		jDSGvV574GtrJHaDU1Dw504sTdg=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -219,14 +219,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MqKR0rTis6sfOMFTuJw+NiUUjEy3i6BcdGk3Ox23N5k=
+			WeVQ7kvhkTaz5pwVOukoW7E/9RsiRKDjf2bGAyTouM4=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			anGrjSaZ78yDMQzukXHT+Ay2h7YfCF9fnTDfSvi7xyQ=
+			5MPDq6N9vHhtvInbHpDdwv5535gbU5sdY5dbvCsffvM=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -320,25 +320,18 @@
 			l9lUjZy+WpLPM5hh270tNetsyCbzzwl+9OG6vqSR7PM=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/emergency.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			TpiJ90+17yB6D878z8Fgo4a2dVO5iqPtU4HLOK3qH2E=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/event.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			d+MHG8mtSU/+Tg/+XKKfxfKZRdqdXzQfYkTGgifRu38=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/event.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			Yoh4TFyg6yZ/w/C9wW0u/zwk7w6+aB2jHe+ZOzcCvCs=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/event1.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			w5ij4R/0gL3+Bb52Vcg3k/za062jObScSVgeH1S5Mes=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/event_date_icon.svg</key>
@@ -411,18 +404,18 @@
 			+5ke1hgOe2vt7FS9edRMBHXuaAnUgmSNF8nrpzD4bQA=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/noticeboard.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			1kOOVt6uJISZT1syihkYiUryXJqcWIBOJhuWZ7u4XC4=
-			</data>
-		</dict>
 		<key>flutter_assets/assets/noticeboard.svg</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			sYbQ5jEcNYJ0OFmwjO5nehvtiohhDROcJCEJFTUEJGs=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/noticeboard1.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FlmRJ3WMOx7UfydoVLxq1GD3agGIkIhtQpfPmi6qung=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/noticeboard_icon.png</key>
@@ -444,6 +437,20 @@
 			<key>hash2</key>
 			<data>
 			AggUfE+JS0GtI8+V/94HRrSMvypJgpeVnbKT+4LdQx0=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/sign.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G6ClSUhOYBjfkbs0Mg00MR3k+1BYMYuuIhQ7s3URpW4=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/siren.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TmyjwQiaorzjxegZdwnTYeyk/gH5Ue2LdVC/iFJLrp4=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/smartgate.svg</key>
@@ -488,25 +495,11 @@
 			vta7sIlmTu9uoWGhcVmO6W3oj6LmegmXwIUgiQoWm/c=
 			</data>
 		</dict>
-		<key>flutter_assets/assets/team.png</key>
+		<key>flutter_assets/assets/team1.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			neBJuiLF/br3puh1hyfo+Fr7pt1ELyTeCXI2A2/Zr64=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/team.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			FsKiB35G/zB5jp1T4UJJJUzE5wNp465RO5nytgROJUU=
-			</data>
-		</dict>
-		<key>flutter_assets/assets/visitor.png</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			eok+ybaju9vNnjIl/vm3iscW57an/+vSRBSaqu7LfCE=
+			dQQD/jpTTIkdWnIfYmRIYcGPEK7hyc/19g2MdMGsjBk=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/warning.png</key>
@@ -534,7 +527,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JwySxpMnVYRWSJv6K5zraV8GzmN8pRbtpJmP8MVCtQQ=
+			YgkQh+rpDq0yIoTOTi1LEfl78Bik4fT1luERRCA8USs=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

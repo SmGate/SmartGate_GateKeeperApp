@@ -16,7 +16,6 @@ class HomeScreenController extends GetxController {
 
   @override
   void onInit() {
-   
     super.onInit();
     NotificationServices notificationServices = NotificationServices();
     notificationServices.requestNotification();

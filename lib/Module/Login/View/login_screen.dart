@@ -83,9 +83,20 @@ class _LoginState extends State<Login> {
                           MyTextFormField(
                             controller: controller.userCnicController,
                             textInputType: TextInputType.number,
-                            validator: validateExpression,
+                            validator: emptyStringValidator,
                             hintText: 'CNIC',
                             labelText: 'CNIC',
+                            maxLenght: 15,
+                            onChanged: (value) {
+                              String formattedText = formatText(value);
+
+                              controller.userCnicController.value =
+                                  TextEditingValue(
+                                text: formattedText,
+                                selection: TextSelection.collapsed(
+                                    offset: formattedText.length),
+                              );
+                            },
                           ),
                           MyPasswordTextFormField(
                               controller: controller.userPasswordController,
@@ -118,5 +129,25 @@ class _LoginState extends State<Login> {
             }),
       ),
     );
+  }
+
+  /////  formate cnic text
+
+  String formatText(String text) {
+    text = text.replaceAll(RegExp(r'\D'), '');
+
+    if (text.length > 15) {
+      text = text.substring(0, 15);
+    }
+
+    String formattedText = '';
+    for (int i = 0; i < text.length; i++) {
+      if (i == 5 || i == 12) {
+        formattedText += '-';
+      }
+      formattedText += text[i];
+    }
+
+    return formattedText;
   }
 }

@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -26,33 +28,36 @@ class MyTextFormField extends GetView {
   final Color? hintTextColor;
   final Color? fillColor;
   final TextInputType? textInputType;
+  void Function(String)? onChanged;
+  int? maxLenght;
 
   final String? Function(String?)? validator;
   final void Function()? onTap;
-  const MyTextFormField({
-    super.key,
-    this.maxLines,
-    this.textAlign,
-    this.padding,
-    this.readOnly,
-    this.textInputType,
-    this.contentPadding,
-    this.prefixIcon,
-    this.suffixIcon,
-    this.fontWeight,
-    this.fill,
-    this.fontSize,
-    this.onTap,
-    this.width,
-    this.height,
-    this.controller,
-    this.fillColor,
-    this.validator,
-    required this.hintText,
-    this.labelTextColor,
-    required this.labelText,
-    this.hintTextColor,
-  });
+  MyTextFormField(
+      {super.key,
+      this.maxLines,
+      this.textAlign,
+      this.padding,
+      this.readOnly,
+      this.textInputType,
+      this.contentPadding,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.fontWeight,
+      this.fill,
+      this.fontSize,
+      this.onTap,
+      this.width,
+      this.height,
+      this.controller,
+      this.fillColor,
+      this.validator,
+      required this.hintText,
+      this.labelTextColor,
+      required this.labelText,
+      this.hintTextColor,
+      this.onChanged,
+      this.maxLenght});
 
   Widget build(BuildContext context) {
     return Padding(
@@ -61,11 +66,13 @@ class MyTextFormField extends GetView {
         width: width ?? 343.w,
         // height: height ?? 43.w,
         child: TextFormField(
+          onChanged: onChanged,
+          maxLength: maxLenght ?? 1000,
           style: GoogleFonts.ubuntu(
               fontWeight: FontWeight.w400,
               fontSize: 15.sp,
               letterSpacing: 0.05),
-
+          //  inputFormatters: [inputFormatter!],
           keyboardType: textInputType,
           // obscureText: widget.obscureText,
           textAlign: textAlign ?? TextAlign.start,

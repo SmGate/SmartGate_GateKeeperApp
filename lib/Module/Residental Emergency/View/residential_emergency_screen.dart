@@ -127,10 +127,14 @@ class ResidentialEmergencyScreen extends GetView {
             borderRadius: BorderRadius.circular(4.0),
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 19.w),
-                child: Image.asset('assets/emergency.png'),
+                child: Image.asset(
+                  'assets/siren.png',
+                  height: 50,
+                ),
               ),
               Expanded(
                 child: Padding(

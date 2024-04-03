@@ -17,13 +17,13 @@ class NotificationServices {
     var androidInitialization =
         AndroidInitializationSettings("@mipmap/ic_launcher");
 
-        var iosInitialization = DarwinInitializationSettings(
+    var iosInitialization = DarwinInitializationSettings(
         requestAlertPermission: true,
         requestBadgePermission: true,
         requestCriticalPermission: true,
         requestSoundPermission: true);
-    var initializeSetting =
-        InitializationSettings(android: androidInitialization,iOS: iosInitialization);
+    var initializeSetting = InitializationSettings(
+        android: androidInitialization, iOS: iosInitialization);
 
     await flutterLocalNotificationsPlugin.initialize(initializeSetting,
         onDidReceiveNotificationResponse: (payload) async {
@@ -88,7 +88,6 @@ class NotificationServices {
 
   Future<String?> getDeviceToken() async {
     String? deviceToken = await firebaseMessaging.getToken();
-
     return deviceToken;
   }
 
@@ -114,7 +113,6 @@ class NotificationServices {
   }
 
   handleMessages(RemoteMessage message) async {
-    
     User user = await MySharedPreferences.getUserData();
 
     print(message.data['type']);

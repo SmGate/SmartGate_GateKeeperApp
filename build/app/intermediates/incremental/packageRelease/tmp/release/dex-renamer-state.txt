@@ -1,4 +1,4 @@
-#Tue Mar 26 12:18:54 PKT 2024
+#Thu Mar 28 10:03:35 PKT 2024
 base.0=/Users/tms/Documents/smart_gate_projects/GITHUB 2K24/SmartGate_GateKeeperApp/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

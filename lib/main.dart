@@ -60,7 +60,6 @@ void getValuesFromPref() async {
   SharedPreferences preferences = await SharedPreferences.getInstance();
   countryCode = preferences.getString("countryCode");
   languageCode = preferences.getString("languageCode");
-
   print("********************${countryCode}");
   print("********************${languageCode}");
 }

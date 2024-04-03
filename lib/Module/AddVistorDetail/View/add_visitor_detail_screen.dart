@@ -84,6 +84,17 @@ class AddVisitorDetailScreen extends GetView {
                                   labelText: 'Cnic',
                                   hintText: 'Cnic',
                                   textInputType: TextInputType.number,
+                                  maxLenght: 15,
+                                  validator: emptyStringValidator,
+                                  onChanged: (value) {
+                                    String formattedText = formatText(value);
+                                    controller.cnicController.value =
+                                        TextEditingValue(
+                                      text: formattedText,
+                                      selection: TextSelection.collapsed(
+                                          offset: formattedText.length),
+                                    );
+                                  },
                                 ),
                                 MyTextFormField(
                                   controller: controller.mobileNoController,
@@ -337,5 +348,25 @@ class AddVisitorDetailScreen extends GetView {
             }),
       ),
     );
+  }
+
+  /////  formate cnic text
+
+  String formatText(String text) {
+    text = text.replaceAll(RegExp(r'\D'), '');
+
+    if (text.length > 15) {
+      text = text.substring(0, 15);
+    }
+
+    String formattedText = '';
+    for (int i = 0; i < text.length; i++) {
+      if (i == 5 || i == 12) {
+        formattedText += '-';
+      }
+      formattedText += text[i];
+    }
+
+    return formattedText;
   }
 }

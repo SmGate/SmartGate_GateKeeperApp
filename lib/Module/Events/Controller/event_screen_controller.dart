@@ -16,7 +16,6 @@ class EventScreenController extends GetxController {
 
   @override
   void onInit() {
-   
     super.onInit();
 
     userdata = user;

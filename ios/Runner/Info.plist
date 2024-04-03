@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Smartgate Gatekeeper</string>
+	<string>Gatekeeper</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -54,5 +54,12 @@
 	<false/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Our app requires access to your photo library to allow you to select and upload images for sharing with friends</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+	<string>Description of why your app requires speech recognition</string>
+    <key>NSMicrophoneUsageDescription</key>
+	<string>Description of why your app requires microphone access</string>
+
+
+
 </dict>
 </plist>

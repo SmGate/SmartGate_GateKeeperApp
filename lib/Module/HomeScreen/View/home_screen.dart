@@ -6,6 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:gatekeeper/Constants/instructions_label.dart';
 import 'package:gatekeeper/Module/HomeScreen/Controller/home_screen_controller.dart';
+import 'package:gatekeeper/main.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -26,15 +27,11 @@ class _HomeScreenState extends State<HomeScreen> {
     {'name': 'ENGLISH', 'local': Locale('en', 'Us')},
     {'name': 'اردو', 'local': Locale('ur', 'PK')}
   ];
+  late FlutterTts flutterTts;
 
-  FlutterTts flutterTts = FlutterTts();
+  // FlutterTts flutterTts = FlutterTts();
 
   Future<void> speakUrdu(String text) async {
-    await flutterTts.setLanguage('ur-PK'); // Set Urdu language
-    await flutterTts.setPitch(1.0); // Set pitch (optional)
-    await flutterTts.setSpeechRate(0.5); // Set speech rate (optional)
-    await flutterTts.setVolume(1.0); // Set volume (optional)
-
     await flutterTts.speak(text);
   }
 
@@ -48,6 +45,33 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isSpeaking3 = false;
   bool isSpeaking4 = false;
   bool isSpeaking5 = false;
+
+  @override
+  void initState() {
+    super.initState();
+    initializeTts();
+  }
+
+  void initializeTts() async {
+    flutterTts = FlutterTts();
+    flutterTts.setLanguage('hi-IN');
+    flutterTts.setPitch(1.0);
+    flutterTts.setSpeechRate(0.5);
+    flutterTts.setVolume(1.0);
+
+    // Set iOS audio category
+    flutterTts.setSharedInstance(true);
+    await flutterTts.setIosAudioCategory(
+      IosTextToSpeechAudioCategory.playback,
+      [
+        IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+        IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+        IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+        IosTextToSpeechAudioCategoryOptions.defaultToSpeaker
+      ],
+      IosTextToSpeechAudioMode.defaultMode,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: 26,
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 25),
+                          padding: EdgeInsets.only(
+                              left: languageCode == "ur" ? 10 : 25,
+                              right: languageCode == "ur" ? 25 : 0),
                           child: Text(
                             "Welcome , ${controller.user.firstName} ${controller.user.lastName}",
                             style: GoogleFonts.ubuntu(
@@ -181,10 +207,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 20,
                                 right:
-                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
+                                    Get.locale?.languageCode == 'ur' ? 20 : 20),
                             child: SizedBox(
                               height: 64,
-                              width: 324,
+                              width: double.infinity,
                               child: Container(
                                 decoration:
                                     BoxDecoration(color: HexColor('#FAFAFA')),
@@ -192,16 +218,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 30, top: 10),
+                                      padding: EdgeInsets.only(
+                                          left: Get.locale?.languageCode == 'ur'
+                                              ? 0
+                                              : 10,
+                                          right:
+                                              Get.locale?.languageCode == 'ur'
+                                                  ? 10
+                                                  : 0,
+                                          top: 10),
                                       child: Row(
                                         children: [
                                           CircleAvatar(
-                                              maxRadius: 20,
+                                              maxRadius: 23,
                                               backgroundColor: Color.fromRGBO(
                                                   255, 153, 0, 0.35),
-                                              child: Image.asset(
-                                                  'assets/team.png')),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Image.asset(
+                                                  'assets/team1.png',
+                                                ),
+                                              )),
+
+                                          // SvgPicture.asset('assets/team1.svg'),
                                           SizedBox(
                                             width: 12,
                                           ),
@@ -294,10 +334,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 20,
                                 right:
-                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
+                                    Get.locale?.languageCode == 'ur' ? 20 : 20),
                             child: SizedBox(
                               height: 64,
-                              width: 324,
+                              width: double.infinity,
                               child: Container(
                                 decoration:
                                     BoxDecoration(color: HexColor('#FAFAFA')),
@@ -305,16 +345,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 30, top: 10),
+                                      padding: EdgeInsets.only(
+                                          left: Get.locale?.languageCode == 'ur'
+                                              ? 0
+                                              : 10,
+                                          right:
+                                              Get.locale?.languageCode == 'ur'
+                                                  ? 10
+                                                  : 0,
+                                          top: 10),
                                       child: Row(
                                         children: [
                                           CircleAvatar(
-                                              maxRadius: 20,
+                                              maxRadius: 23,
                                               backgroundColor: Color.fromRGBO(
                                                   255, 153, 0, 0.35),
-                                              child: Image.asset(
-                                                  'assets/event.png')),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Image.asset(
+                                                  'assets/event1.png',
+                                                ),
+                                              )),
                                           SizedBox(
                                             width: 12,
                                           ),
@@ -408,10 +460,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 20,
                                 right:
-                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
+                                    Get.locale?.languageCode == 'ur' ? 20 : 20),
                             child: SizedBox(
                               height: 64,
-                              width: 324,
+                              width: double.infinity,
                               child: Container(
                                 decoration:
                                     BoxDecoration(color: HexColor('#FAFAFA')),
@@ -419,16 +471,27 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 30, top: 10),
+                                      padding: EdgeInsets.only(
+                                          left: Get.locale?.languageCode == 'ur'
+                                              ? 0
+                                              : 10,
+                                          right:
+                                              Get.locale?.languageCode == 'ur'
+                                                  ? 10
+                                                  : 0,
+                                          top: 10),
                                       child: Row(
                                         children: [
                                           CircleAvatar(
-                                              maxRadius: 20,
+                                              maxRadius: 23,
                                               backgroundColor: Color.fromRGBO(
                                                   255, 153, 0, 0.35),
-                                              child: Image.asset(
-                                                  'assets/noticeboard.png')),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Image.asset(
+                                                    'assets/noticeboard1.png'),
+                                              )),
                                           SizedBox(
                                             width: 12,
                                           ),
@@ -521,10 +584,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 20,
                                 right:
-                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
+                                    Get.locale?.languageCode == 'ur' ? 20 : 20),
                             child: SizedBox(
                               height: 64,
-                              width: 324,
+                              width: double.infinity,
                               child: Container(
                                 decoration:
                                     BoxDecoration(color: HexColor('#FAFAFA')),
@@ -532,16 +595,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 30, top: 10),
+                                      padding: EdgeInsets.only(
+                                          left: Get.locale?.languageCode == 'ur'
+                                              ? 0
+                                              : 10,
+                                          right:
+                                              Get.locale?.languageCode == 'ur'
+                                                  ? 10
+                                                  : 0,
+                                          top: 10),
                                       child: Row(
                                         children: [
                                           CircleAvatar(
-                                              maxRadius: 20,
+                                              maxRadius: 23,
                                               backgroundColor: Color.fromRGBO(
                                                   255, 153, 0, 0.35),
                                               child: Image.asset(
-                                                'assets/visitor.png',
+                                                'assets/sign.png',
                                                 width: 24,
                                               )),
                                           SizedBox(
@@ -637,10 +707,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 20,
                                 right:
-                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
+                                    Get.locale?.languageCode == 'ur' ? 20 : 20),
                             child: SizedBox(
                               height: 64,
-                              width: 324,
+                              width: double.infinity,
                               child: Container(
                                 decoration:
                                     BoxDecoration(color: HexColor('#FAFAFA')),
@@ -648,17 +718,24 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 30, top: 10),
+                                      padding: EdgeInsets.only(
+                                          left: Get.locale?.languageCode == 'ur'
+                                              ? 0
+                                              : 10,
+                                          right:
+                                              Get.locale?.languageCode == 'ur'
+                                                  ? 10
+                                                  : 0,
+                                          top: 10),
                                       child: Row(
                                         children: [
                                           CircleAvatar(
-                                              maxRadius: 20,
+                                              maxRadius: 23,
                                               backgroundColor: Color.fromRGBO(
                                                   255, 153, 0, 0.35),
                                               child: Image.asset(
-                                                'assets/emergency.png',
-                                                width: 24,
+                                                'assets/siren.png',
+                                                width: 34,
                                               )),
                                           SizedBox(
                                             width: 12,
@@ -751,10 +828,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             padding: EdgeInsets.only(
                                 left: 20,
                                 right:
-                                    Get.locale?.languageCode == 'ur' ? 20 : 0),
+                                    Get.locale?.languageCode == 'ur' ? 20 : 20),
                             child: SizedBox(
                               height: 64,
-                              width: 324,
+                              width: double.infinity,
                               child: Container(
                                 decoration:
                                     BoxDecoration(color: HexColor('#FAFAFA')),
@@ -762,12 +839,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding:
-                                          EdgeInsets.only(left: 30, top: 10),
+                                      padding: EdgeInsets.only(
+                                          left: Get.locale?.languageCode == 'ur'
+                                              ? 0
+                                              : 10,
+                                          right:
+                                              Get.locale?.languageCode == 'ur'
+                                                  ? 10
+                                                  : 0,
+                                          top: 10),
                                       child: Row(
                                         children: [
                                           CircleAvatar(
-                                              maxRadius: 20,
+                                              maxRadius: 23,
                                               backgroundColor: Color.fromRGBO(
                                                   255, 153, 0, 0.35),
                                               child: Image.asset(
